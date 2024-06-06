@@ -22,7 +22,7 @@ Follow this steps to install productize locally
 Clone the repository
 
 ```
-git clone https://github.com/techstudioconsults/10X.git
+git clone https://github.com/koredeploy/group-a.git
 ```
 
 Change branch to Development branch
