@@ -1,6 +1,6 @@
-# React + Vite
+# Internship Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This file provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
@@ -22,7 +22,7 @@ Follow this steps to install productize locally
 Clone the repository
 
 ```
-git clone https://github.com/techstudioconsults/10X.git
+git clone https://github.com/koredeploy/group-a.git
 ```
 
 Change branch to Development branch
