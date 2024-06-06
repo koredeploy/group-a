@@ -1,6 +1,6 @@
-# React + Vite
+# Internship Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This file provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
