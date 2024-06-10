@@ -1,14 +1,15 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import HomeIndex from './pages/Home/HomeIndex'
 
 function App() {
 
   return (
-    <>
-    
-      <h1>Tedible </h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, odio harum corrupti assumenda ut unde eligendi porro quaerat commodi expedita.</p>
-      
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route index element = {<HomeIndex />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
