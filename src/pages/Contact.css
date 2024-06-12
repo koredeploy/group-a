@@ -1,0 +1,119 @@
+.contactform {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  padding: 3em;
+  background-color: whitesmoke;
+  border-radius: 3em;
+  border-top-color: var(--orange);
+
+  /* align-items: center; */
+}
+
+.contactform input {
+  border-radius: 0.5em;
+  padding: 0.8em 1em;
+  border: 0.1em solid var(--green);
+}
+
+textarea {
+  border-radius: 0.5em;
+  border: 0.1em solid var(--green);
+}
+
+.generalContact {
+  display: flex;
+}
+.generalContact button {
+  color: var(--white);
+  background-color: var(--orange);
+  padding: 1em;
+  border-radius: 1em;
+  border: none;
+}
+.locationContact,
+.mailContact,
+.phoneContact {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 2em 1.8em;
+}
+
+.locationContact img {
+  width: 3em;
+}
+.mailContact img {
+  width: 3em;
+}
+.phoneContact img {
+  width: 3em;
+}
+.locationinner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.mapicon {
+  display: flex;
+  gap: 0.8em;
+  color: var(--brown);
+}
+.mapicon img {
+  width: 1.2em;
+}
+
+.mainContact hr {
+  border: 0;
+  border-top: 0.1em dashed black;
+  width: 150%;
+}
+
+.ourphone {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+
+.infoContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.map{
+    width: 100%;
+}
+
+
+@media (width> 768px) {
+  .generalContact {
+    display: flex;
+    align-items: center;
+  }
+  .locationContact,
+  .mailContact,
+  .phoneContact {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  .mainContact {
+    padding: 1em 3em;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .mainContact hr {
+    border: 0;
+    border-top: 0.1em dashed black;
+    width: 100%;
+  }
+  .infoContact {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+  }
+}
