@@ -1,0 +1,67 @@
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: sticky;
+  align-items: center;
+  background-color: var(--green);
+}
+
+.NavLogo {
+  width: 30%;
+  display: none;
+}
+
+.links {
+  gap: 2rem;
+  display: none;
+}
+
+.noactivelink {
+  color: var(--green);
+}
+
+.active-link {
+  color: var(--orange);
+}
+.buttons {
+  display: none;
+  gap: 8%;
+}
+.btn1,
+.btn2 {
+  border-radius: 4em;
+  padding: 0.5em 2em;
+}
+.navbar {
+  position: relative;
+}
+.btn1 {
+  background-color: white;
+  color: var(--orange);
+  border: 0.1em solid var(--orange);
+}
+.btn2 {
+  background-color: var(--orange);
+  color: white;
+  border: 0em;
+}
+
+@media (width > 768px) {
+  .links,
+  .buttons {
+    display: flex;
+  }
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    position: sticky;
+    background-color: white;
+  }
+  .NavLogo {
+    width: 20%;
+    display: flex;
+  }
+}

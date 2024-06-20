@@ -1,0 +1,107 @@
+.maincontainer {
+  background-color: var(--green);
+  color: white;
+  padding: 2.5rem;
+}
+.innercontainer {
+  display: grid;
+  gap: 5%;
+  grid-template-columns: 1fr;
+}
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+
+.followUs h4 {
+  display: none;
+}
+.socialmedia {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+}
+.contact img {
+  width: 5%;
+}
+.followUs img {
+  width: 10%;
+}
+.followUs {
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+.terms {
+  display: none;
+}
+.resources {
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+.subscribe {
+  display: flex;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 40%;
+}
+.copyright {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+.newsletter input {
+  border-radius: 0.5rem;
+  padding: 0.5em 1em;
+  border: 0.1rem solid white;
+  background-color: var(--green);
+}
+.LOGO {
+  margin-bottom: 3rem;
+}
+.contact {
+  display: none;
+}
+.quicklinks {
+  display: none;
+}
+
+@media (width> 768px) {
+  .innercontainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  }
+  .contact {
+    display: flex;
+  }
+  .high5 {
+    display: none;
+  }
+  .quicklinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .terms {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+  }
+  .followUs h4 {
+    display: flex;
+  }
+}
