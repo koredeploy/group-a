@@ -1,10 +1,9 @@
-import space from '../../../assets/space.png'
-import kfc from '../../../assets/kfc.png'
-import chickenrep from '../../../assets/chicken.png'
-import awoof from '../../../assets/awoof.png'
-import sweetsensation from '../../../assets/sweetsensation.png'
-import theplace from '../../../assets/theplace.png'
-import React from 'react'
+import space from '../../assets/space.png'
+import kfc from '../../assets/kfc.png'
+import chickenrep from '../../assets/chicken.png'
+import awoof from '../../assets/awoof.png'
+import sweetsensation from '../../assets/sweetsensation.png'
+import theplace from '../../assets/theplace.png'
 
 const SlidePage = () => {
   return (

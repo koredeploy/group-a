@@ -1,12 +1,12 @@
-import defaultImage from '../../../assets/default.png';
-import egusiImage from '../../../assets/egusi.png';
-import egusiHover from '../../../assets/hoveredegusi.png';
-import riceHover from '../../../assets/hoveredrice.png';
-import chopsHover from '../../../assets/hoveredchops.png';
-import friedImage from '../../../assets/fried rice.png';
-import chopsImage from '../../../assets/small chops.png';
+import defaultImage from '../../assets/default.png';
+import egusiImage from '../../assets/egusi.png';
+import egusiHover from '../../assets/hoveredegusi.png';
+import riceHover from '../../assets/hoveredrice.png';
+import chopsHover from '../../assets/hoveredchops.png';
+import friedImage from '../../assets/fried_rice.png';
+import chopsImage from '../../assets/small_chops.png';
 import styles from './Hero.module.css'
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Hero = () => {
     const [hoveredItem, setHoveredItem] = useState(null);
