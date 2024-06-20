@@ -59,7 +59,6 @@ const SideBar = () => {
           About Us
         </NavLink>
 
-        
         <NavLink to="/login">Login</NavLink>
         <NavLink to="/register">Register</NavLink>
       </div>

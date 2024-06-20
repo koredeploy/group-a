@@ -56,6 +56,8 @@ const NavBar = () => {
         <div className="buttons">
           <Link className="btn1">Login</Link>
           <Link className="btn2">Register</Link>
+          <button className="btn3">Register as Student</button>
+          <button className="btn4">Register as Vendor</button>
         </div>
         <SideBar />
       </div>

@@ -1,0 +1,28 @@
+.category-food {
+  display: flex;
+  flex-direction: column;
+  padding: 3em;
+  gap: 0.8em;
+}
+
+.foodImg {
+  display: flex;
+  gap: 1.5em;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+.foodImg img {
+  scroll-snap-align: center;
+}
+
+.foodImg {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  .foodImg {
+    display: flex;
+    overflow-x: auto;
+  }
+}
