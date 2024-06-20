@@ -6,6 +6,7 @@
     --white: #fefeff;
     --brown: #9c4920;
 }
+
 * {
     padding: 0;
     margin: 0;
@@ -13,6 +14,13 @@
     font-family: "Poppins", sans-serif;
     text-decoration: none !important;
 }
+
+/* this is very temporary */
+/* p,
+h2 {
+    color: #073126;
+} */
+/* this is very temporary */
 
 .bg-white {
     color: var(--white);

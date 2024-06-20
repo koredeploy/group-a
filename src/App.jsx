@@ -10,7 +10,6 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 function App() {
     const router = createBrowserRouter([
         {
-            path: "/",
             element: <RootLayout />,
             children: [
                 {
