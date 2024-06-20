@@ -6,11 +6,12 @@
   padding: 3em;
   background-color: whitesmoke;
   border-radius: 3em;
-  border-top-color: var(--orange);
-
-  /* align-items: center; */
+  border-top: 0.3em solid var(--orange);
 }
 
+.contactform1{
+  width: 92%;
+}
 .contactform input {
   border-radius: 0.5em;
   padding: 0.8em 1em;
@@ -22,8 +23,14 @@ textarea {
   border: 0.1em solid var(--green);
 }
 
+.p{
+  padding: 0.5em;
+  width: 96.7%;
+}
 .generalContact {
   display: flex;
+  padding: 4em 0.7em;
+  
 }
 .generalContact button {
   color: var(--white);
@@ -81,12 +88,14 @@ textarea {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: -1em;
+  margin-top: 2em;
 }
 
-.map{
-    width: 100%;
+.map {
+  width: 100%;
+  margin-bottom: 4em;
 }
-
 
 @media (width> 768px) {
   .generalContact {
@@ -104,6 +113,8 @@ textarea {
     padding: 1em 3em;
     display: flex;
     flex-direction: row-reverse;
+    width: 100%;
+    justify-content: start;
   }
   .mainContact hr {
     border: 0;
@@ -115,5 +126,9 @@ textarea {
     flex-direction: column;
     align-items: start;
     text-align: start;
+  }
+  .mainContactInner,
+  .info {
+    width: 50%;
   }
 }

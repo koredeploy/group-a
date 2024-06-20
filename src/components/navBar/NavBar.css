@@ -24,6 +24,9 @@
 .active-link {
   color: var(--orange);
 }
+.navbar {
+  position: relative;
+}
 .buttons {
   display: none;
   gap: 8%;
@@ -32,9 +35,6 @@
 .btn2 {
   border-radius: 4em;
   padding: 0.5em 2em;
-}
-.navbar {
-  position: relative;
 }
 .btn1 {
   background-color: white;
@@ -63,5 +63,11 @@
   .NavLogo {
     width: 20%;
     display: flex;
+  }
+  .NavLogo1{
+    display: none;
+  }
+  .btn3, .btn4{
+    display: none;
   }
 }

@@ -3,6 +3,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
 import Contact from "./pages/Contact";
 import Error404 from "./pages/error404/Error404";
+import Categories from "./pages/categories/Categories";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   const router = createBrowserRouter([
@@ -10,10 +12,17 @@ function App() {
       path: "/",
       element: <RootLayout />,
       children: [
-      
         {
           path: "/contact",
           element: <Contact />,
+        },
+        {
+          path: "/categories",
+          element: <Categories />,
+        },
+        {
+          path: "/privacy",
+          element: <PrivacyPolicy />,
         },
         {
           path: "*",

@@ -41,8 +41,8 @@ const Contact = () => {
             <img src={emailImg} alt="" />
             <div className="ourphone">
               <h4>Our Email</h4>
-              <small>airpeace@gmail.com</small>
-              <small>airpeace@gmail.com</small>
+              <small>contact@airpeace.com</small>
+              <small>contact@airpeace.com</small>
             </div>
           </div>
         </div>
@@ -56,14 +56,42 @@ const Contact = () => {
           </div>
           <div className="generalContact">
             <form className="contactform" action="">
-              <input type="text" placeholder="Your Name" name="your_name" />
-              <input type="text" placeholder="Phone Number" name="your_phone" />
-              <input type="email" placeholder="Your Email" name="your_email" />
-              <textarea
+              <div>
+                <h4>Full Name</h4>
+                <input
+                  className="contactform1"
+                  type="text"
+                  placeholder="Your Name"
+                  name="your_name"
+                />
+              </div>
+              <div>
+                <h4>Email</h4>
+                <input
+                  className="contactform1"
+                  type="email"
+                  placeholder="Your Email"
+                  name="your_email"
+                />
+              </div>
+              <div>
+                <h4>Subject</h4>
+                <input
+                  className="contactform1"
+                  type="text"
+                  placeholder="Subject Title"
+                  name="your_title"
+                />
+              </div>
+              <div>
+                <h4>Message</h4>
+                <textarea
+              className="p"
                 name="message"
                 rows="5"
-                placeholder="Message"
+                placeholder="Type your message here"
               ></textarea>
+              </div>
               <button>Send Message</button>
             </form>
           </div>
