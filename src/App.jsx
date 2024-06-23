@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import Error404 from "./pages/error404/Error404";
 import Categories from "./pages/categories/Categories";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import SignUpIndex from "./pages/signUp/signUpIndex";
 
 function App() {
     const router = createBrowserRouter([
@@ -36,6 +37,10 @@ function App() {
                 {
                     path: "*",
                     element: <Error404 />,
+                },
+                {
+                    path: "/signUp",
+                    element: <SignUpIndex/>,
                 },
             ],
         },
