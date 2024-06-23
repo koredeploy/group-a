@@ -1,14 +1,13 @@
-import React from 'react'
-import Hero from './Hero/Hero'
-import SlidePage from './SlidePage/SlidePage'
+import SlidePage from '../../components/SlidePage/SlidePage'
 import FeaturesPage from './FeaturesPage/FeaturesPage'
 import InfoPage from './InfoPage/InfoPage'
+import Hero from '../../components/Hero/Hero'
 
 const HomeIndex = () => {
   return (
     <>
         <Hero />
-        <SlidePage /> 
+        <SlidePage />
         <FeaturesPage />
         <InfoPage />
     </>

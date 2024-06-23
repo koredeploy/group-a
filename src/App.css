@@ -1,50 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+:root {
+    --green: #073126;
+    --orange: #ff7834;
+    --white: #fefeff;
+    --brown: #9c4920;
 }
 
-.logos-slide{
-  white-space: nowrap;
-  animation: 35s slide infinite linear;
-  display: inline-block;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none !important;
 }
 
-.logos{
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
+/* this is very temporary */
+/* p,
+h2 {
+    color: #073126;
+} */
+/* this is very temporary */
 
+.bg-white {
+    color: var(--white);
+}
+.custom-text-white {
+    color: var(--white);
 }
 
-.logos::before, 
-.logos::after{
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 5rem;
-  height: 100%;
-  z-index: 2;
+.logos-slide {
+    white-space: nowrap;
+    animation: 35s slide infinite linear;
+    display: inline-block;
 }
 
-.logos::before{
-  left: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0), #0b3026);
-}
-.logos::after{
-  right: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), #0b3026);
-
+.logos {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
 }
 
-@keyframes slide{
-  from{
-    transform: translateX(-100%);
-  }
-  to{
-    transform: translateX(0);
-  }
+.logos::before,
+.logos::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 5rem;
+    height: 100%;
+    z-index: 2;
 }
+
+.logos::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), #0b3026);
+}
+.logos::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #0b3026);
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

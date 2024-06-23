@@ -14,7 +14,7 @@ const AboutUs = () => {
             <div className='flex gap-[2rem] w-[150rem]'>
                 <div className='w-full border flex bg-white pl-[2rem] pt-[2rem] pb-[2rem]'>
                     <div className='border-l-[3px] border-b-[3px] border-t-[3px] border-orange-500 flex p-[1rem]'>
-                        <div className='px-[rem]'>
+                        <div className='px-[rem] text-black'>
                             <h1 className='font-semibold text-[20px]'>Alex</h1>
                             <p className='text-[14px] font-bold'>Web Development Student</p>
                             <div className='border-b-[1px] border-black p-2 w-[3rem]'></div>
@@ -27,7 +27,7 @@ const AboutUs = () => {
                 </div>
                 <div className='w-full border flex bg-white pl-[2rem] pt-[2rem] pb-[2rem]'>
                     <div className='border-l-[3px] border-b-[3px] border-t-[3px] border-orange-500 flex p-[1rem]'>
-                        <div className='py-[rem]'>
+                        <div className='py-[rem] text-black'>
                             <h1 className='font-semibold text-[20px]'>Rofiat</h1>
                             <p className='text-[14px] font-bold'>CyberSecurity Student</p>
                             <div className='border-b-[1px] border-black p-2 w-[3rem]'></div>
@@ -40,7 +40,7 @@ const AboutUs = () => {
                 </div>
                 <div className='w-full border flex bg-white pl-[2rem] pt-[2rem] pb-[2rem]'>
                     <div className='border-l-[3px] border-b-[3px] border-t-[3px] border-orange-500 flex p-[1rem]'>
-                        <div className='py-[rem]'>
+                        <div className='py-[rem] text-black'>
                             <h1 className='font-semibold text-[20px]'>Rofiat</h1>
                             <p className='text-[14px] font-bold'>CyberSecurity Student</p>
                             <div className='border-b-[1px] border-black p-2 w-[3rem]'></div>

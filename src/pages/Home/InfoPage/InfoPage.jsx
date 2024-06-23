@@ -3,49 +3,49 @@ import React from 'react'
 
 const InfoPage = () => {
   return (
-    <section className='px-[5rem] flex w-full py-[5rem] items-center justify-center gap-[1rem]'>
+    <section className='md:px-[5rem] px-[3rem] md:flex md:flex-row flex flex-col-reverse w-full md:py-[5rem] py-[2rem] md:items-center md:gap-[1rem] gap-[2rem]'>
         <div className='flex flex-col gap-[.5rem]'>
-            <h1 className='text-[80px] font-light leading-[5.5rem]'>BECOME <br /> A VENDOR</h1>
-            <div className='flex items-center gap-[.5rem] font-light'>
+            <h1 className='md:text-[80px] text-[45px] font-light md:leading-[5.5rem] leading-[3rem]'>BECOME <br /> A VENDOR</h1>
+            <div className='flex items-baseline gap-[.5rem] font-light'>
                 <div>
-                    <div className='border rounded-full px-[.2rem] py-[.2rem] bg-[#FF7834] border-[#FF7834]'></div>
+                    <div className='border rounded-full md:px-[.2rem] px-[.15rem] md:py-[.2rem] py-[.15rem] bg-[#FF7834] border-[#FF7834]'></div>
                 </div>
-                <p>Increased Visibility: Reach thousands of hungry customers daily.</p>
+                <p className='md:text-[16px] md:w-[32rem] text-[12px] '>Increased Visibility: Reach thousands of hungry customers daily.</p>
             </div>
-            <div className='flex items-center gap-[.5rem] font-light'>
+            <div className='flex items-baseline gap-[.5rem] font-light'>
                 <div>
-                    <div className='border rounded-full px-[.2rem] py-[.2rem] bg-[#FF7834] border-[#FF7834]'></div>
+                    <div className='border rounded-full md:px-[.2rem] px-[.15rem] md:py-[.2rem] py-[.15rem] bg-[#FF7834] border-[#FF7834]'></div>
                 </div>
-                <p>Marketing Support: Benefit from our extensive marketing campaigns.</p>
+                <p className='md:text-[16px] md:w-[32rem] text-[12px]'>Marketing Support: Benefit from our extensive marketing campaigns.</p>
             </div>
-            <div className='flex items-center gap-[.5rem] font-light'>
+            <div className='flex items-baseline gap-[.5rem] font-light'>
                 <div>
-                    <div className='border rounded-full px-[.2rem] py-[.2rem] bg-[#FF7834] border-[#FF7834]'></div>
+                    <div className='border rounded-full md:px-[.2rem] px-[.15rem] md:py-[.2rem] py-[.15rem] bg-[#FF7834] border-[#FF7834]'></div>
                 </div>
-                <p>Reliable Delivery: Fast and reliable delivery services.</p>
+                <p className='md:text-[16px] md:w-[32rem] text-[12px]'>Reliable Delivery: Fast and reliable delivery services.</p>
             </div>
-            <div className='flex items-center gap-[.5rem] font-light'>
+            <div className='flex items-baseline gap-[.5rem] font-light'>
                 <div>
-                    <div className='border rounded-full px-[.2rem] py-[.2rem] bg-[#FF7834] border-[#FF7834]'></div>
+                    <div className='border rounded-full md:px-[.2rem] px-[.15rem] md:py-[.2rem] py-[.15rem] bg-[#FF7834] border-[#FF7834]'></div>
                 </div>
-                <p>Analytics and Insights: Access to performance data and insights.</p>
+                <p className='md:text-[16px] md:w-[32rem] text-[12px]'>Analytics and Insights: Access to performance data and insights.</p>
             </div>
-            <div className='flex items-center gap-[.5rem] font-light'>
+            <div className='flex items-baseline gap-[.5rem] font-light'>
                 <div>
-                    <div className='border rounded-full px-[.2rem] py-[.2rem] bg-[#FF7834] border-[#FF7834]'></div>
+                    <div className='border rounded-full md:px-[.2rem] px-[.15rem] md:py-[.2rem] py-[.15rem] bg-[#FF7834] border-[#FF7834]'></div>
                 </div>
-                <p>Customer Support: 24/7 dedicated partner support.</p>
+                <p className='md:text-[16px] md:w-[32rem] text-[12px]'>Customer Support: 24/7 dedicated partner support.</p>
             </div>
 
             <div className='pt-[1.5rem]'>
-                <button className='border bg-[#FF7834] text-white rounded-full py-[.5rem] px-[2rem] '>Become a Vendor</button>
+                <button className='border bg-[#FF7834] text-white rounded-xl py-[1rem] px-[2rem] '>Become a Vendor</button>
             </div>
 
             
         </div>
 
-      <div>
-        <img src={image} alt="" className='w-[30rem]'/>
+      <div className='w-full'>
+        <img src={image} alt="" className='w-full'/>
       </div>
     </section>
   )
