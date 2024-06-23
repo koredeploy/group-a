@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import HomeIndex from './pages/Home/HomeIndex'
+import AboutIndex from './pages/About/AboutIndex'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element = {<HomeIndex />} />
+        <Route path='About' element = {<AboutIndex />} />
       </Routes>
     </BrowserRouter>
   )
