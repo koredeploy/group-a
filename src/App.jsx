@@ -10,6 +10,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import SignUpIndex from "./pages/signUp/signUpIndex";
 import VendorForm1 from "./pages/signUp/VendorForm1/VendorForm1";
 import VendorForm2 from "./pages/signUp/VendorForm2/VendorForm2";
+import SignUp from "./pages/signUp/SignUp";
 
 function App() {
   const router = createBrowserRouter([
@@ -45,12 +46,8 @@ function App() {
           element: <SignUpIndex />,
         },
         {
-          path: "/vendor1",
-          element: <VendorForm1 />,
-        },
-        {
-          path: "/vendor2",
-          element: <VendorForm2 />,
+          path: "/signup",
+          element: <SignUp />,
         },
       ],
     },

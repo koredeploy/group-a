@@ -69,8 +69,8 @@ const VendorForm1 = () => {
 
         </div>
           <div className="absolute flex flex-col justify-center items-center bottom-[6rem] w-full">
-            <Link to={"/VendorForm2"} className="text-[#ffffff] rounded-full px-[.9rem] border-[3px] cursor-pointer border-[#FF7834] text-[30px]">
-                >
+            <Link to="/VendorForm2" className="text-[#ffffff] rounded-full px-[.9rem] border-[3px] cursor-pointer border-[#FF7834] text-[30px]">
+                 &gt;
             </Link>
           </div>
       </form>
