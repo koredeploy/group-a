@@ -2,6 +2,8 @@ import React from "react";
 import "../signUp/SignUp.css";
 import { Link } from "react-router-dom";
 import { FaCheckSquare, FaRegSquare } from "react-icons/fa";
+import deviconFacebook from "../../assets/devicon_facebook.png";
+import deviconGoogle from "../../assets/devicon_google.png";
 
 const SignUp = () => {
   return (
@@ -67,13 +69,13 @@ const SignUp = () => {
               <div className="btnss">
                 <button className="formbtn">Sign Up</button>
                 <small>
-                  Already have an account? <Link to="/login">Log in</Link>
+                  Already have an account? <Link className="tinylogin" to="/login">Log in</Link>
                 </small>
                 <hr />
                 <small>or Sign up with</small>
                 <div className="socials">
-                  <p>google</p>
-                  <p>facebook</p>
+                  <img src={deviconGoogle} alt="" />
+                  <img src={deviconFacebook} alt="" />
                 </div>
               </div>
             </div>

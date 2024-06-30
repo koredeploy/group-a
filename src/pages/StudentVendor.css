@@ -1,0 +1,44 @@
+.allvector {
+  padding: 8rem 6rem;
+  text-align: center;
+  color: var(--white);
+  background-image: url("../assets/loginbackgroundImg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  gap: 5em;
+  align-items: center;
+  justify-content: center;
+}
+.studentvector {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  border: 0.2em solid var(--white);
+  padding: 1.5em;
+  border-radius: 0.5em;
+}
+.vendorvector {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  border: 0.2em solid var(--white);
+  padding: 1.5em;
+  border-radius: 0.5em;
+}
+.student1,
+.vendor1 {
+  width: 30%;
+  margin-left: 4em;
+}
+.allvector button {
+  background-color: var(--orange);
+  border-radius: 0.3em;
+  padding: 0.3em 4em;
+}
+@media (width < 768px) {
+  .allvector {
+    display: flex;
+    flex-direction: column;
+  }
+}

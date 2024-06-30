@@ -1,8 +1,8 @@
-.studentSignup {
+.studentSignup1 {
   padding: 8rem 6rem;
   text-align: center;
   color: var(--white);
-  background-image: url("../../assets/loginbackgroundImg.png");
+  background-image: url("../assets/loginbackgroundImg.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   display: flex;
@@ -10,19 +10,19 @@
   gap: 1em;
 }
 
-.studentform {
+.studentform2 {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.studentform1 {
+.studentform3 {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.studentform1 div {
+.studentform3 div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -30,60 +30,77 @@
   margin-bottom: 1em;
 }
 
-.studentinput,
-.studentinput1 {
+.studentinput2,
+.studentinput3 {
   width: 100%;
   border-radius: 0.4em;
   padding: 0.4em 0.7em;
   color: black;
 }
 
-.agreeterms {
-  display: flex;
-  align-items: center;
-  gap: 0.2em;
-  margin-bottom: 0.5em;
-}
-.formbtn {
+.formbtn1 {
   color: var(--white);
   background-color: var(--orange);
-  padding: 0.4em 8.2em;
+  padding: 0.4em 8.6em;
   border-radius: 0.5em;
   border: none;
+  width: 100%;
 }
 .btnss {
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
-.studentSignup {
+.studentSignup1 {
   padding: 4rem 2rem;
 }
+
 .socials {
   display: flex;
   gap: 1.2em;
   align-items: center;
   justify-content: center;
 }
-.tinylogin{
+.tinylogin {
   color: var(--orange);
 }
-@media (width> 768px) {
-  .studentform1 {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
+.forgotpassword {
+  color: var(--orange);
+  margin-top: 0.8em;
+}
+.tick {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.tick1 {
+  display: flex;
+  gap: 1em;
+  margin: 2em 0;
+  justify-content: center;
+}
+@media (width > 768px) {
+  .studentform3 {
+    display: flex;
     gap: 1em;
-    width: 50%;
+    width: 35%;
   }
-  .studentinput1 {
-    width: 205%;
+  .studentinput3 {
+    width: 90%;
   }
-  .formbtn {
+  .formbtn1 {
     color: var(--white);
     background-color: var(--orange);
-    padding: 0.4em 17em;
+    padding: 0.4em 11.5em;
     border-radius: 0.5em;
     border: none;
     width: 100%;
+  }
+  .studentinput2,
+  .studentinput3 {
+    width: 100%;
+    border-radius: 0.4em;
+    padding: 0.4em 1em;
+    color: black;
   }
 }

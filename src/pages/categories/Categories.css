@@ -8,21 +8,42 @@
 .foodImg {
   display: flex;
   gap: 1.5em;
-  overflow-x: hidden;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 .foodImg img {
   scroll-snap-align: center;
 }
 
-.foodImg {
-  scroll-behavior: smooth;
+.foodImg p {
+  display: flex;
+  justify-content: center;
+  padding: 0.8em;
+  transition: 0.3s ease, color 0.3s ease;
+}
+
+.foodImg div:hover {
+  background-color: var(--orange);
+  color: white;
+}
+
+.foodImg div {
+  border-radius: 1.5em;
+  border-top: 0;
 }
 
 @media (max-width: 768px) {
   .foodImg {
-    display: flex;
     overflow-x: auto;
+    gap: 1em;
+  }
+  .foodImg div {
+    flex: 0 0 40%;
+  }
+  .foodImg img {
+    width: 100%;
   }
 }

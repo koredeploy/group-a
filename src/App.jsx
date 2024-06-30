@@ -9,8 +9,11 @@ import Categories from "./pages/categories/Categories";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import SignUpIndex from "./pages/signUp/signUpIndex";
 import VendorForm1 from "./pages/signUp/VendorForm1/VendorForm1";
-import VendorForm2 from "./pages/signUp/VendorForm2/VendorForm2";
+import "leaflet/dist/leaflet.css";
 import SignUp from "./pages/signUp/SignUp";
+import StudentVendor from "./pages/StudentVendor";
+import Login from "./pages/Login";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   const router = createBrowserRouter([
@@ -30,7 +33,7 @@ function App() {
           element: <Categories />,
         },
         {
-          path: "/About",
+          path: "/about",
           element: <AboutIndex />,
         },
         {
@@ -46,8 +49,24 @@ function App() {
           element: <SignUpIndex />,
         },
         {
-          path: "/signup",
+          path: "/signupstudent",
           element: <SignUp />,
+        },
+        {
+          path: "/signupvendor",
+          element: <VendorForm1 />,
+        },
+        {
+          path: "/studentvendor",
+          element: <StudentVendor />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/forgotpassword",
+          element: <ForgotPassword />,
         },
       ],
     },

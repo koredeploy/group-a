@@ -5,12 +5,12 @@
   width: 100%;
   padding: 3em;
   background-color: whitesmoke;
-  border-radius: 3em;
+  border-radius: 1em;
   border-top: 0.3em solid var(--orange);
 }
 
-.contactform1{
-  width: 92%;
+.contactform1 {
+  width: 97%;
 }
 .contactform input {
   border-radius: 0.5em;
@@ -23,20 +23,19 @@ textarea {
   border: 0.1em solid var(--green);
 }
 
-.p{
+.p {
   padding: 0.5em;
   width: 96.7%;
 }
 .generalContact {
   display: flex;
   padding: 4em 0.7em;
-  
 }
 .generalContact button {
   color: var(--white);
   background-color: var(--orange);
   padding: 1em;
-  border-radius: 1em;
+  border-radius: 0.7em;
   border: none;
 }
 .locationContact,
@@ -115,6 +114,8 @@ textarea {
     flex-direction: row-reverse;
     width: 100%;
     justify-content: start;
+    align-items: center;
+    gap: 1em;
   }
   .mainContact hr {
     border: 0;
@@ -126,6 +127,7 @@ textarea {
     flex-direction: column;
     align-items: start;
     text-align: start;
+    padding: 1em 5em;
   }
   .mainContactInner,
   .info {

@@ -34,7 +34,7 @@ const NavBar = () => {
             Categories
           </NavLink>
           <NavLink
-            to="/signup"
+            to="/signupstudent"
             className={({ isActive }) =>
               isActive ? " active-link" : "noactivelink"
             }
@@ -59,12 +59,12 @@ const NavBar = () => {
           </NavLink>
         </div>
         <div className="buttons">
-          <Link className="btn1">Login</Link>
-          <Link to="/signup" className="btn2">
+          <Link to="/login" className="btn1">
+            Login
+          </Link>
+          <Link to="/studentvendor" className="btn2">
             Register
           </Link>
-          <button className="btn3">Register as Student</button>
-          <button className="btn4">Register as Vendor</button>
         </div>
         <SideBar />
       </div>

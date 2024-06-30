@@ -14,6 +14,13 @@ const Contact = () => {
       <div>
         <HeroSectionContactUs />
       </div>
+      <div className="infoContact">
+        <h1>Write us directly</h1>
+        <span>
+          Whether you need information, want to book a reservation, or just
+          share your feedback, <p>we're here for you</p>
+        </span>
+      </div>
       <div className="mainContact">
         <div className="mainContactInner">
           <div className="locationContact">
@@ -47,13 +54,6 @@ const Contact = () => {
           </div>
         </div>
         <div className="info">
-          <div className="infoContact">
-            <h4>Write us directly</h4>
-            <span>
-              Whether you need information, want to book a reservation, or just
-              share your feedback, <p>we're here for you</p>
-            </span>
-          </div>
           <div className="generalContact">
             <form className="contactform" action="">
               <div>

@@ -60,7 +60,7 @@ const SideBar = () => {
         </NavLink>
 
         <NavLink to="/login">Login</NavLink>
-        <NavLink to="/register">Register</NavLink>
+        <NavLink to="/studentvendor">Register</NavLink>
       </div>
       <div
         className="icon"
