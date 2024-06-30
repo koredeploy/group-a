@@ -14,6 +14,7 @@ import SignUp from "./pages/signUp/SignUp";
 import StudentVendor from "./pages/StudentVendor";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
+import Faq from "./pages/Faq/Faq";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,41 @@ function App() {
         {
           path: "/",
           element: <HomeIndex />,
+            element: <RootLayout />,
+            children: [
+                {
+                    path: "/",
+                    element: <HomeIndex />,
+                },
+                {
+                    path: "/contact",
+                    element: <Contact />,
+                },
+                {
+                    path: "/categories",
+                    element: <Categories />,
+                },
+                {
+                    path: "/About",
+                    element: <AboutIndex />,
+                },
+                {
+                    path: "/privacy",
+                    element: <PrivacyPolicy />,
+                },
+                {
+                    path: "*",
+                    element: <Error404 />,
+                },
+                {
+                    path: "/signUp",
+                    element: <SignUpIndex/>,
+                },
+                {
+                    path: "/faq",
+                    element: <Faq/>,
+                }
+            ],
         },
         {
           path: "/contact",
