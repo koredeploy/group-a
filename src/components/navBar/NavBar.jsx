@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo tedible.png";
 import "../navBar/NavBar.css";
 import SideBar from "../sideBar/SideBar";
 import logoMobile from "../../assets/Logo mobile.png";
+import AuthContext from "../../context/AuthContext";
 
 const NavBar = () => {
+  // const { user } = useContext(AuthContext);
   return (
     <nav className="navbar">
       <div className="main-container">
@@ -67,6 +69,9 @@ const NavBar = () => {
           </Link>
         </div>
         <SideBar />
+        <div>
+          {/* <p>{user.name}</p> */}
+        </div>
       </div>
     </nav>
   );

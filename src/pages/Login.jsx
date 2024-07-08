@@ -6,8 +6,32 @@ import deviconGoogle from "../assets/devicon_google.png";
 import "../pages/Login.css";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+import useAuth from "../hooks/useAuth";
+import toast from "react-hot-toast";
+import Spinner from "../utils/Spinner";
+import handleAuthError from "../utils/handleAuthError";
 const Login = () => {
+  const { isSubmitting, setIsSubmitting, handleLogIn,  setToken, token, setUser } = useAuth();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+  
+
+  const submit = (data) => {
+    handleLogIn(data);
+    // console.log(data);
+  };
+
   const [userType, setUserType] = useState("");
+  const btnText = isSubmitting ? <Spinner /> : "Log In";
 
   return (
     <div>
@@ -34,25 +58,41 @@ const Login = () => {
               <small>Log in as a vendor</small>
             </div>
           </div>
-          <form className="studentform2" action="">
+          <form
+            onSubmit={handleSubmit(submit)}
+            className="studentform2"
+            action=""
+          >
             <div className="studentform3">
               <div>
                 <h4>Username</h4>
                 <input
-                  className="studentinput3"
+                  {...register("username", { required: true })}
+                  className={`studentinput3 ${
+                    errors.username ? "border-red-500" : ""
+                  }`}
                   type="text"
                   placeholder="Your Username"
-                  name="your_username"
+                  name="username"
                 />
+                {errors?.username?.type === "required" ? (
+                  <small className="text-white">This field is required!</small>
+                ) : null}
               </div>
               <div>
                 <h4>Password</h4>
                 <input
-                  className="studentinput3"
+                  {...register("password", { required: true })}
+                  className={`studentinput3 ${
+                    errors.password ? "border-danger" : ""
+                  }`}
                   type="password"
                   placeholder="*******"
                   name="password"
                 />
+                {errors?.password?.type === "required" ? (
+                  <small className="text-danger">This field is required!</small>
+                ) : null}
                 <Link to="/forgotpassword">
                   <small className="forgotpassword">Forgot Password?</small>
                 </Link>
@@ -61,7 +101,9 @@ const Login = () => {
 
             <div className="agree">
               <div className="btnss">
-                <button className="formbtn1">Log In</button>
+                <button disabled={isSubmitting} className="formbtn1">
+                  {btnText}
+                </button>
                 <hr />
                 <small>or Sign up with</small>
                 <div className="socials">

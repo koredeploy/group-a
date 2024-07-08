@@ -24,41 +24,6 @@ function App() {
         {
           path: "/",
           element: <HomeIndex />,
-            element: <RootLayout />,
-            children: [
-                {
-                    path: "/",
-                    element: <HomeIndex />,
-                },
-                {
-                    path: "/contact",
-                    element: <Contact />,
-                },
-                {
-                    path: "/categories",
-                    element: <Categories />,
-                },
-                {
-                    path: "/About",
-                    element: <AboutIndex />,
-                },
-                {
-                    path: "/privacy",
-                    element: <PrivacyPolicy />,
-                },
-                {
-                    path: "*",
-                    element: <Error404 />,
-                },
-                {
-                    path: "/signUp",
-                    element: <SignUpIndex/>,
-                },
-                {
-                    path: "/faq",
-                    element: <Faq/>,
-                }
-            ],
         },
         {
           path: "/contact",
@@ -104,12 +69,16 @@ function App() {
           path: "/forgotpassword",
           element: <ForgotPassword />,
         },
+        {
+          path: "/faq",
+          element: <Faq />,
+        },
       ],
     },
   ]);
   return (
     <>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}></RouterProvider>
     </>
   );
 }
