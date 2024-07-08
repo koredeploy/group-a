@@ -69,9 +69,7 @@ const NavBar = () => {
           </Link>
         </div>
         <SideBar />
-        <div>
-          {/* <p>{user.name}</p> */}
-        </div>
+        <div>{/* <p>{user.name}</p> */}</div>
       </div>
     </nav>
   );
