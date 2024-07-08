@@ -1,12 +1,19 @@
-import React from "react";
 import logo from "../../assets/logo tedible.png";
 import facebookLogo from "../../assets/facebook logo.png";
 import instaLogo from "../../assets/insta logo.png";
 import twitterLogo from "../../assets/twitter logo.png";
 import copyrightLogo from "../../assets/copyrightlogo.png";
 import "../footer/Footer.css";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+  const routesWithoutFooter = ['/navbarInternal'];
+  const isFooterVisible = !routesWithoutFooter.includes(location.pathname);
+
+  if (!isFooterVisible) {
+    return null;
+  }
   return (
     <div className="maincontainermobile">
       <img className="LOGOmobile" src={logo} alt="" />

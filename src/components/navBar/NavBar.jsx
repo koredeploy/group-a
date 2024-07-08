@@ -1,10 +1,19 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/logo tedible.png";
 import "../navBar/NavBar.css";
 import SideBar from "../sideBar/SideBar";
 import logoMobile from "../../assets/Logo mobile.png"
 
 const NavBar = () => {
+  const location = useLocation();
+  const routesWithoutNavbar = ['/layoutInternal', '/LayoutInternal'];
+  const isNavbarVisible = !routesWithoutNavbar.includes(location.pathname);
+
+  if (!isNavbarVisible) {
+    return null;
+  }
+
+  
   return (
     <nav className="navbar">
       <div className="main-container">

@@ -1,18 +1,36 @@
 import alex from '../../../assets/alex.png'
 import rofiat from '../../../assets/rofiat.png'
 import pic from '../../../assets/pic.png'
-import React from 'react'
+// import '../../categories/Categories.css'
+import '../AboutUs/AboutUs.Module.css'
 
 const AboutUs = () => {
   return (
-    <section className='w-full overflow-hidden'>
+    <section className='w-full '>
         <div className='bg-[#F7FAFC] py-[3rem] md:px-[5rem] px-[2rem]'>
             <div className='text-center py-[2rem]'>
                 <h1 className='md:text-[50px] py-[2rem] text-[29px] font-medium'>What Our Clients Say About Us</h1>
             </div>
 
-            <div className='flex gap-[2rem] w-[150rem]'>
-                <div className='w-full border flex bg-white pl-[2rem] pt-[2rem] pb-[2rem]'>
+            <div className='About'>
+                <img src={alex} alt="" />
+                <img src={rofiat} alt="" />
+                <img src={alex} alt="" />
+                <img src={alex} alt="" />
+                <img src={alex} alt="" />
+                <img src={alex} alt="" />
+                <img src={alex} alt="" />
+                <img src={alex} alt="" />
+                <img src={alex} alt="" />
+                <img src={alex} alt="" />
+                <img src={alex} alt="" />
+                <img src={alex} alt="" />
+                <img src={alex} alt="" />
+                <img src={alex} alt="" />
+            </div>
+
+            {/* <div className='flex gap-[2rem] w-[150rem]'>
+                <div className='w-full border flex bg-white border-[#ffffff] pl-[2rem] pt-[2rem] pb-[2rem]'>
                     <div className='border-l-[3px] border-b-[3px] border-t-[3px] border-orange-500 flex p-[1rem]'>
                         <div className='px-[rem] text-black'>
                             <h1 className='font-semibold text-[20px]'>Alex</h1>
@@ -25,7 +43,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-full border flex bg-white pl-[2rem] pt-[2rem] pb-[2rem]'>
+                <div className='w-full border flex bg-white border-[#ffffff] pl-[2rem] pt-[2rem] pb-[2rem]'>
                     <div className='border-l-[3px] border-b-[3px] border-t-[3px] border-orange-500 flex p-[1rem]'>
                         <div className='py-[rem] text-black'>
                             <h1 className='font-semibold text-[20px]'>Rofiat</h1>
@@ -38,7 +56,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-full border flex bg-white pl-[2rem] pt-[2rem] pb-[2rem]'>
+                <div className='w-full border flex bg-white border-[#ffffff] pl-[2rem] pt-[2rem] pb-[2rem]'>
                     <div className='border-l-[3px] border-b-[3px] border-t-[3px] border-orange-500 flex p-[1rem]'>
                         <div className='py-[rem] text-black'>
                             <h1 className='font-semibold text-[20px]'>Rofiat</h1>
@@ -51,7 +69,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-full border flex bg-white pl-[2rem] pt-[2rem] pb-[2rem]'>
+                <div className='w-full border flex bg-white border-[#ffffff] pl-[2rem] pt-[2rem] pb-[2rem]'>
                     <div className='border-l-[3px] border-b-[3px] border-t-[3px] border-orange-500 flex p-[1rem]'>
                         <div className='py-[rem]'>
                             <h1 className='font-semibold text-[20px]'>Rofiat</h1>
@@ -64,17 +82,17 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
 
 
       <div className='md:py-[5rem] py-[2rem] md:px-[5rem] px-[2rem]'>
-        <h1 className='md:text-[50px] py-[2rem] text-[29px] font-medium text-center'>Meet Our Team</h1>
+        <h1 className='md:text-[50px] py-[2rem] text-[29px] font-medium text-center'>Meet The Team</h1>
 
         <div className='md:flex grid grid-cols-2 md:gap-[3rem] gap-[1rem]'>
             <div className='text-center border border-[#0C513F] w-full pb-[rem] rounded-t-2xl rounded-b-xl '>
                 <div>
-                    <img src={pic} alt="" />
+                    <img src={pic} alt="" className='w-full'/>
                 </div>
                 <div className='md:py-[2rem] py-[1rem]'>
                     <h1 className='md:text-[24px] text-[14px] font-medium'>Aisha Falola</h1>
@@ -83,7 +101,7 @@ const AboutUs = () => {
             </div>
             <div className='text-center border w-full border-[#0C513F] rounded-t-2xl rounded-b-xl '>
                 <div>
-                    <img src={pic} alt="" />
+                    <img src={pic} alt="" className='w-full'/>
                 </div>
                 <div className='md:py-[2rem] py-[1rem]'>
                     <h1 className='md:text-[24px] text-[14px] font-medium'>Olatunji Fijabi</h1>
@@ -92,7 +110,7 @@ const AboutUs = () => {
             </div>
             <div className='text-center border w-full border-[#0C513F] rounded-t-2xl rounded-b-xl '>
                 <div>
-                    <img src={pic} alt="" />
+                    <img src={pic} alt="" className='w-full'/>
                 </div>
                 <div className='md:py-[2rem] py-[1rem]'>
                     <h1 className='md:text-[24px] text-[14px]font-medium'>Ibidun Adesoji</h1>
@@ -101,7 +119,7 @@ const AboutUs = () => {
             </div>
             <div className='text-center border w-full border-[#0C513F] rounded-t-2xl rounded-b-xl '>
                 <div>
-                    <img src={pic} alt="" />
+                    <img src={pic} alt="" className='w-full'/>
                 </div>
                 <div className='md:py-[2rem] py-[1rem]'>
                     <h1 className='md:text-[24px] text-[14px] font-medium'>Raymond Greg</h1>

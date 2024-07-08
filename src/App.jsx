@@ -9,6 +9,7 @@ import Categories from "./pages/categories/Categories";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import SignUpIndex from "./pages/signUp/signUpIndex";
 import Faq from "./pages/Faq/Faq";
+import LayoutInternal from "./layout/LayoutInternal";
 
 function App() {
     const router = createBrowserRouter([
@@ -46,7 +47,11 @@ function App() {
                 {
                     path: "/faq",
                     element: <Faq/>,
-                }
+                },
+                {
+                    path: "/LayoutInternal",
+                    element: <LayoutInternal/>,
+                },
             ],
         },
     ]);

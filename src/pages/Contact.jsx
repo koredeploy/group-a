@@ -24,7 +24,7 @@ const Contact = () => {
                 Find us on Google Map
                 <img src={mapIcon} alt="" />
               </small>
-              <p>1 Ogunlesi Street, Off Awoyokun, Onipanu, Lagos.</p>
+              <p className="">1 Ogunlesi Street, Off Awoyokun, Onipanu, Lagos.</p>
             </div>
           </div>
           <hr />
