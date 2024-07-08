@@ -1,0 +1,27 @@
+.errorImg {
+  padding: 8rem 6rem;
+  text-align: center;
+  color: var(--white);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/errorbackground.png");
+  gap: 1em;
+}
+.btnError {
+  display: flex;
+  justify-content: center;
+  background-color: var(--orange);
+  border-radius: 0.5em;
+  padding: 0.5em 2em;
+}
+.arrowbtn {
+  display: flex;
+  gap: 0.3em;
+  align-items: center;
+}
+.btnerror {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,80 @@
+.studentSignup {
+    padding: 8rem 6rem;
+    text-align: center;
+    color: var(--white);
+    background-image: url("../../assets/loginbackgroundImg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  .studentform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .studentform1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .studentform1 div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  
+  .studentinput,.studentinput1 {
+    width: 100%;
+    border-radius: 0.4em;
+    padding: 0.4em 0.7em;
+    color: black;
+  }
+  
+  .agreeterms {
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+    margin-bottom: 0.5em;
+  }
+  .formbtn {
+    color: var(--white);
+    background-color: var(--orange);
+    padding: 0.4em 2em;
+    border-radius: 0.5em;
+    border: none;
+    width: 100%;
+  }
+  .btnss {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .studentSignup {
+    padding: 4rem 2rem;
+  }
+  .socials {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (width> 768px) {
+    .studentform1 {
+      display: grid;
+      grid-template-columns:2fr 2fr ;
+      gap: 1em;
+      width: 50%;
+    }
+   .studentinput1{
+      width: 205%;
+   }
+  
+  }
+  

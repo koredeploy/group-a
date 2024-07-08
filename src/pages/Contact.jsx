@@ -6,6 +6,7 @@ import emailImg from "../assets/mailImg.png";
 import mapIcon from "../assets/googlemapIcon.png";
 import HeroSectionContactUs from "../components/HeroSectionContactUs";
 import googleMap from "../assets/directionlogo.png";
+import Map from "../components/Map";
 
 const Contact = () => {
   return (
@@ -13,7 +14,6 @@ const Contact = () => {
       <div>
         <HeroSectionContactUs />
       </div>
-
       <div className="mainContact">
         <div className="mainContactInner">
           <div className="locationContact">
@@ -86,18 +86,18 @@ const Contact = () => {
               <div>
                 <h4>Message</h4>
                 <textarea
-              className="p"
-                name="message"
-                rows="5"
-                placeholder="Type your message here"
-              ></textarea>
+                  className="p"
+                  name="message"
+                  rows="5"
+                  placeholder="Type your message here"
+                ></textarea>
               </div>
               <button>Send Message</button>
             </form>
           </div>
         </div>
       </div>
-      <img className="map" src={googleMap} alt="" />
+      <Map />
     </div>
   );
 };

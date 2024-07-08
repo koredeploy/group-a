@@ -1,8 +1,10 @@
+// import { Link, NavLink, useLocation } from "react-router-dom";
+import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/logo tedible.png";
 import "../navBar/NavBar.css";
 import SideBar from "../sideBar/SideBar";
-import logoMobile from "../../assets/Logo mobile.png"
+import logoMobile from "../../assets/Logo mobile.png";
 
 const NavBar = () => {
   const location = useLocation();
@@ -17,8 +19,12 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="main-container">
-        <img className="NavLogo1" src={logoMobile} alt="" />
-        <img className="NavLogo" src={logo} alt="Logo" />
+        <Link to="/">
+          <img className="NavLogo1" src={logoMobile} alt="" />
+        </Link>
+        <Link to="/" className="NavLogo">
+          <img src={logo} alt="Logo" />
+        </Link>
         <div className="links">
           <NavLink
             exact
@@ -38,7 +44,7 @@ const NavBar = () => {
             Categories
           </NavLink>
           <NavLink
-            to="/restaurants"
+            to="/signup"
             className={({ isActive }) =>
               isActive ? " active-link" : "noactivelink"
             }
@@ -64,7 +70,9 @@ const NavBar = () => {
         </div>
         <div className="buttons">
           <Link className="btn1">Login</Link>
-          <Link className="btn2">Register</Link>
+          <Link to="/signup" className="btn2">
+            Register
+          </Link>
           <button className="btn3">Register as Student</button>
           <button className="btn4">Register as Vendor</button>
         </div>
