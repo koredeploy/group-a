@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { RiMenu4Line } from "react-icons/ri";
 import "../sideBar/SideBar.css";
 import { Link, NavLink } from "react-router-dom";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const SideBar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -15,7 +16,7 @@ const SideBar = () => {
   }, [showMenu]);
 
   return (
-    <>
+    <div>
       <div ref={navbarRef} className="sidebar-content">
         <NavLink
           exact
@@ -60,17 +61,17 @@ const SideBar = () => {
         </NavLink>
 
         <NavLink to="/login">Login</NavLink>
-        <NavLink to="/register">Register</NavLink>
+        <NavLink to="/studentvendor">Register</NavLink>
       </div>
       <div
-        className="icon"
         onClick={() => {
           setShowMenu(!showMenu);
         }}
+        className={`text-2xl text-white`}
       >
-        <RiMenu4Line className="bg-white" />
+        <Icon icon="ion:menu" />
       </div>
-    </>
+    </div>
   );
 };
 

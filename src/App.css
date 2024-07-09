@@ -90,6 +90,8 @@ h2 {
   height: 40em;
   z-index: 2;
 }
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
