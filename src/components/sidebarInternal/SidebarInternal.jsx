@@ -7,12 +7,14 @@ const linkClasses = 'flex items-center gap-2 font-light px-3 py-3 hover:bg-[#FF7
 
 const SidebarInternal = () => {
   return (
-    <div className='md:flex hidden flex-col w-60 p-3 bg-[#073126] gap-2 text-white '>
+    <div className='sm:flex hidden flex-col h-full w-60 p-3 bg-[#073126] gap-2 text-white fixed z-20'>
 
     {/* LOGO  */}
 
       <div className='flex justify-start px-2 py-4'>
-        <img src={logo} alt="this is the logo" className=''/>
+        <Link to={'/internal/dashboard'}>
+          <img src={logo} alt="this is the logo" className=''/>
+        </Link>
       </div>
       <div className='border-b-[.1px] w-[12.5rem] ml-3 border-[#A9ACAF] bg-[#A9ACAF]'></div>
 

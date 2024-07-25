@@ -1,5 +1,5 @@
 // import { Link, NavLink, useLocation } from "react-router-dom";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
 import React, { useContext } from "react";
 import logo from "../../assets/logo tedible.png";
 import "../navBar/NavBar.css";
@@ -8,13 +8,6 @@ import logoMobile from "../../assets/Logo mobile.png";
 import AuthContext from "../../context/AuthContext";
 
 const NavBar = () => {
-  const location = useLocation();
-  const routesWithoutNavbar = ['/layoutInternal', '/LayoutInternal'];
-  const isNavbarVisible = !routesWithoutNavbar.includes(location.pathname);
-
-  if (!isNavbarVisible) {
-    return null;
-  }
 
   
   // const { user } = useContext(AuthContext);

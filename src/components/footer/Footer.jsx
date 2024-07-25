@@ -14,13 +14,6 @@ import { Link } from "react-router-dom";
   
   const Footer = () => {
     const [dropdrown, setDropDown] = useState(false);
-    const location = useLocation();
-    const routesWithoutFooter = ['/navbarInternal'];
-    const isFooterVisible = !routesWithoutFooter.includes(location.pathname);
-  
-    if (!isFooterVisible) {
-      return null;
-    }
   return (
     <div className="maincontainermobile">
       <img className="LOGOmobile" src={logo} alt="" />

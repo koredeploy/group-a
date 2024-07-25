@@ -7,15 +7,11 @@ import Cart from '../components/Cart/Cart'
 
 const LayoutInternal = () => {
   return (
-    <div className='flex flex-row  bg-neutral-100 h-screen w-screen overflow-hidden'>
+    <div className='flex flex-row bg-[#EDF5FA] h-full w-full'>
         <SidebarInternal/>
-        <div className=''>
+        <div className='bg-[#EDF5FA] w-full'>
             <Header />
             <div>{<Outlet/>}</div>
-            <div className='flex gap-10'>
-                <Dashboard />
-                <Cart />
-            </div>
         </div>
     </div>
   )
