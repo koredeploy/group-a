@@ -10,15 +10,11 @@ import RouteGuard from "../utils/RouteGuard";
 const LayoutInternal = () => {
   return (
     <AuthProvider>
-      <div className="flex flex-row  bg-neutral-100 h-screen w-screen overflow-hidden">
-        <SidebarInternal />
-        <div className="">
-          <Header />
-          <div>{<Outlet />}</div>
-          <div className="flex gap-10">
-            <Dashboard />
-            <Cart />
-          </div>
+    <div className='flex flex-row bg-[#EDF5FA] h-full w-full'>
+        <SidebarInternal/>
+        <div className='bg-[#EDF5FA] w-full'>
+            <Header />
+            <div>{<Outlet/>}</div>
         </div>
       </div>
     </AuthProvider>

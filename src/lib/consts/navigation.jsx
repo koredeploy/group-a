@@ -11,31 +11,31 @@ export const Dashboard_Sidebar_Links =[
     {
         key: "home",
         label: "Home",
-        path: "/LayoutInternal",
+        path: "/internal/dashboard",
         image: home
     },
     {
         key: "category",
         label: "Category",
-        path: "/category",
+        path: "/internal/category",
         image: category
     },
     {
         key: "restaurant",
         label: "Restaurant",
-        path: "/restaurant",
+        path: "/internal/restaurant",
         image: restaurant
     },
     {
         key: "favourite",
         label: "Favourite",
-        path: "/favourite",
+        path: "/internal/favourite",
         image: favorite
     },
     {
         key: "order history",
         label: "Order History",
-        path: "/order",
+        path: "/internal/order",
         image: history
     }
 ]
@@ -44,13 +44,13 @@ export const Dashboard_Sidebar_Bottom_Links = [
     {
         key: "logout",
         label: "Logout",
-        path: "/logout",
+        path: "/internal/logout",
         image: logout
     },
     {
         key: "settings",
         label: "Settings",
-        path: "/settings",
+        path: "/internal/settings",
         image: settings
     },
 ];

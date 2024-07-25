@@ -17,6 +17,13 @@ import StudentVendor from "./pages/StudentVendor";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import RouteGuard from "./utils/RouteGuard";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Cart from "./components/Cart/Cart";
+import Category from "./pages/internalpages/category/Category";
+import Restaurant from "./pages/internalpages/restaurant/Restaurant";
+import Notification from "./pages/internalpages/notification/Notification";
+import CartPage from "./pages/internalpages/cartpage/CartPage";
+import Order from "./pages/internalpages/order/Order";
 
 function App() {
   const router = createBrowserRouter([
@@ -90,7 +97,37 @@ function App() {
         },
       ],
     },
+    {
+      element: <LayoutInternal />,
+      children: [
+        {
+          path: "/internal/dashboard",
+          element: <Dashboard />,
+        },
+        {
+          path: "/internal/cart",
+          element: <CartPage />,
+        },
+        {
+          path: "/internal/category",
+          element: <Category />,
+        },
+        {
+          path: "/internal/restaurant",
+          element: <Restaurant />,
+        },
+        {
+          path: "/internal/notification",
+          element: <Notification />,
+        },
+        {
+          path: "/internal/order",
+          element: <Order />,
+        },
+      ],
+    },
   ]);
+
   return (
     <>
       <RouterProvider router={router}></RouterProvider>
