@@ -12,7 +12,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const FooterDesktop = () => {
   const location = useLocation();
-  const routesWithoutFooter = ['/layoutInternal', '/LayoutInternal'];
+  const routesWithoutFooter = ["/layoutInternal", "/LayoutInternal"];
   const isFooterVisible = !routesWithoutFooter.includes(location.pathname);
 
   if (!isFooterVisible) {
@@ -41,8 +41,12 @@ const FooterDesktop = () => {
         </div>
         <div className="quicklinks">
           <h4>Quick Links</h4>
-          <small>About Us</small>
-          <small>FAQ</small>
+          <Link to="/about" className="custom-text-white text-sm">
+            About Us
+          </Link>
+          <Link to="faq" className="custom-text-white text-sm">
+            FAQ
+          </Link>
           <small>Tedible Prime </small>
           <small>Blog </small>
           <small>Contact Us </small>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../signUp/SignUp.css";
 import { Link } from "react-router-dom";
 import { FaCheckSquare, FaRegSquare } from "react-icons/fa";
@@ -8,9 +8,12 @@ import AuthContext from "../../context/AuthContext";
 import useAuth from "../../hooks/useAuth";
 import { useForm } from "react-hook-form";
 import Spinner from "../../utils/Spinner";
+import { LiaEyeSlashSolid, LiaEyeSolid } from "react-icons/lia";
 
 const SignUp = () => {
   const { handleSignUp, isSubmitting } = useAuth();
+  const [showPasswordVisibility, setShowPasswordVisibility] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -20,8 +23,9 @@ const SignUp = () => {
   const submit = (data) => {
     handleSignUp(data);
   };
-  // const {user} = useContext(AuthContext);
-
+  const handlePasswordVisibility1 = () => {
+    setShowPasswordVisibility(!showPasswordVisibility);
+  };
   const btnText = isSubmitting ? <Spinner /> : "Sign Up";
   console.log(btnText);
 
@@ -89,15 +93,28 @@ const SignUp = () => {
                   <small className="text-white">This field is required!</small>
                 ) : null}
               </div>
-              <div>
+              <div className="password-container1">
                 <h4>Create Password</h4>
-                <input
-                  className="studentinput1"
-                  type="password"
-                  placeholder="Create Password"
-                  name="password"
-                  {...register("password", { required: true })}
-                />
+                <div className="password-input1">
+                  <input
+                    className="studentinput1"
+                    type={showPasswordVisibility ? "text" : "password"}
+                    placeholder="Create Password"
+                    name="password"
+                    {...register("password", { required: true })}
+                  />
+                  <button
+                    type="button"
+                    onClick={handlePasswordVisibility1}
+                    className="password-toggle1"
+                  >
+                    {showPasswordVisibility ? (
+                      <LiaEyeSolid />
+                    ) : (
+                      <LiaEyeSlashSolid />
+                    )}
+                  </button>
+                </div>
                 {errors?.password?.type === "required" ? (
                   <small className="text-white">This field is required!</small>
                 ) : null}
@@ -106,8 +123,19 @@ const SignUp = () => {
 
             <div className="agree">
               <div className="agreeterms">
-                <FaRegSquare />
-                <small>I agree to all the terms and privacy policy</small>
+                {/* <FaRegSquare /> */}
+                <input
+                  type="checkbox"
+                  {...register("agree", { required: true })}
+                />
+                <small>I agree to all the terms and privacy policy</small>{" "}
+              </div>
+              <div className=" flex justify-start">
+                {errors?.agree?.type === "required" ? (
+                  <small className="text-white text-start mb-4">
+                    Please agree to our terms and conditions
+                  </small>
+                ) : null}
               </div>
 
               <div className="btnss">

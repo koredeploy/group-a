@@ -17,7 +17,16 @@
 .sidebar-content.showMenu {
   transform: scaleX(1);
 }
-
+.closesidebar{
+  margin-left: 10em;
+  border: 2em;
+  background-color: var(--orange);
+  padding: 0.6em 1em;
+  border-radius: 0.4em;
+  justify-content: end;
+  align-content: end;
+  /* width: 100%; */
+}
 @media (width > 768px) {
   .sidebar-content.showMenu {
     transform: scaleX(0);

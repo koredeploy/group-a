@@ -16,6 +16,7 @@ import SignUp from "./pages/signUp/SignUp";
 import StudentVendor from "./pages/StudentVendor";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
+import RouteGuard from "./utils/RouteGuard";
 
 function App() {
   const router = createBrowserRouter([
@@ -59,8 +60,13 @@ function App() {
           element: <Faq />,
         },
         {
-          path: "/LayoutInternal",
-          element: <LayoutInternal />,
+          element: <RouteGuard />,
+          children: [
+            {
+              path: "/LayoutInternal",
+              element: <LayoutInternal />,
+            },
+          ],
         },
         {
           path: "/signupvendor",

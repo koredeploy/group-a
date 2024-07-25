@@ -26,6 +26,8 @@
 }
 .navbar {
   position: relative;
+  z-index:5 ;
+  
 }
 .buttons {
   display: none;
@@ -47,6 +49,15 @@
   border: 0em;
 }
 
+.dropsss{
+  color: black;
+  padding: 1.5em;
+  align-items: start;
+}
+.dropss{
+  display: flex;
+  align-items: center;
+}
 @media (width > 768px) {
   .links,
   .buttons {
