@@ -88,7 +88,7 @@ const NavBar = () => {
             </p>
 
             {showDropDown ? (
-              <div className="bg-white flex dropsss flex-col absolute top-12 left-12 z-50">
+              <div className="bg-white flex dropsss flex-col absolute top-16 -left-10 mx-5 z-50 w-[12rem] rounded-lg">
                 <button onClick={handleLogOut}>Log Out</button>
                 <hr />
                 <Link to="/internal/dashboard">Go to Dashboard</Link>
