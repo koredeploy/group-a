@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { RiMenu4Line } from "react-icons/ri";
 import "../sideBar/SideBar.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 const SideBar = () => {
@@ -15,14 +15,24 @@ const SideBar = () => {
     }
   }, [showMenu]);
 
+  const closeSidebar = () => {
+    setShowMenu(!true);
+  };
+
   return (
     <div>
       <div ref={navbarRef} className="sidebar-content">
+        <button
+        className="closesidebar"
+          onClick={closeSidebar}
+        >
+          X
+        </button>
         <NavLink
           exact
           to="/"
           className={({ isActive }) =>
-            isActive ? " active-link" : "noactivelink"
+            isActive ? "active-link" : "noactivelink"
           }
         >
           Home
@@ -30,7 +40,7 @@ const SideBar = () => {
         <NavLink
           to="/categories"
           className={({ isActive }) =>
-            isActive ? " active-link" : "noactivelink"
+            isActive ? "active-link" : "noactivelink"
           }
         >
           Categories
@@ -38,7 +48,7 @@ const SideBar = () => {
         <NavLink
           to="/restaurants"
           className={({ isActive }) =>
-            isActive ? " active-link" : "noactivelink"
+            isActive ? "active-link" : "noactivelink"
           }
         >
           Restaurants
@@ -46,7 +56,7 @@ const SideBar = () => {
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            isActive ? " active-link" : "noactivelink"
+            isActive ? "active-link" : "noactivelink"
           }
         >
           Contact Us
@@ -54,12 +64,11 @@ const SideBar = () => {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? " active-link" : "noactivelink"
+            isActive ? "active-link" : "noactivelink"
           }
         >
           About Us
         </NavLink>
-
         <NavLink to="/login">Login</NavLink>
         <NavLink to="/studentvendor">Register</NavLink>
       </div>
@@ -67,7 +76,7 @@ const SideBar = () => {
         onClick={() => {
           setShowMenu(!showMenu);
         }}
-        className={`text-2xl text-white`}
+        className={`text-2xl text-white menu-icon`}
       >
         <Icon icon="ion:menu" />
       </div>

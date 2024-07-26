@@ -17,7 +17,6 @@ import StudentVendor from "./pages/StudentVendor";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Cart from "./components/Cart/Cart";
 import Category from "./pages/internalpages/category/Category";
 import Restaurant from "./pages/internalpages/restaurant/Restaurant";
 import Notification from "./pages/internalpages/notification/Notification";

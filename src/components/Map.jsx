@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 
 const Map = () => {
   const center = [6.5417, 3.3695];
-  console.log(center);
+  // console.log(center);
   const zoom = 13;
 
   return (

@@ -6,6 +6,7 @@ import chopsHover from '../../../assets/hoveredchops.png';
 import friedImage from '../../../assets/fried rice.png';
 import chopsImage from '../../../assets/small chops.png';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     const [hoveredItem, setHoveredItem] = useState(null);
@@ -25,9 +26,9 @@ const Hero = () => {
                 <h1 className='md:text-[60px] text-[48px] font-bold'>MEAL TIME</h1>
                 <h2 className='md:text-[35px] text-[20px] font-bold md:font-extralight'>FUEL YOUR STUDY</h2>
                 <p className='text-[#FEFEFF] font-normal leading-tight'>Order delicious and nutritious meals, so <br /> you can relax, stay focused and <br /> energized.</p>
-                <div>
+                <Link to="/LayoutInternal">
                     <button className='border rounded-3xl px-[2.5rem] py-1 text-[18.7px] bg-[#FF7834] border-[#FF7834]'>View Menu</button>
-                </div>
+                </Link>
             </div>
 
             <div className='w-full border bg-white rounded-full px-[1rem] py-[1rem] my-[3rem] grid justify-center'>

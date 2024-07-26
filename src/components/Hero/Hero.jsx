@@ -7,6 +7,7 @@ import friedImage from "../../assets/fried_rice.png";
 import chopsImage from "../../assets/small_chops.png";
 import styles from "./Hero.module.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -30,11 +31,11 @@ const Hero = () => {
           Order delicious and nutritious meals, so you can relax, stay focused
           and <br /> energized.
         </p>
-        <div>
+        <Link to="LayoutInternal">
           <button className="border rounded-lg md:mt-0 mt-[1rem]  px-[2.5rem] py-1 text-[18.7px] bg-[#FF7834] border-[#FF7834]">
             View Menu
           </button>
-        </div>
+        </Link>
       </div>
 
       <div className="w-full border bg-white rounded-full px-[1rem] py-[1rem] my-[3rem] grid justify-center">

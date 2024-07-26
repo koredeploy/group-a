@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../../assets/logo tedible.png";
 import emailLogo from "../../assets/email logo.png";
 import locationLogo from "../../assets/locationlogo.png";
@@ -34,8 +33,12 @@ const FooterDesktop = () => {
         </div>
         <div className="quicklinks">
           <h4>Quick Links</h4>
-          <small>About Us</small>
-          <small>FAQ</small>
+          <Link to="/about" className="custom-text-white text-sm">
+            About Us
+          </Link>
+          <Link to="faq" className="custom-text-white text-sm">
+            FAQ
+          </Link>
           <small>Tedible Prime </small>
           <small>Blog </small>
           <small>Contact Us </small>

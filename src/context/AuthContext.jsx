@@ -12,8 +12,8 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(() => {
     return JSON.parse(localStorage.getItem("token")) || null;
   });
-  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getUser = JSON.parse(localStorage.getItem("userinfo"));
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
       setUser(data.user);
       localStorage.setItem("token", JSON.stringify(data.token));
       toast.success(`Welcome ${data.user.username}`);
-      navigate("/");
+      navigate("/LayoutInternal");
     } catch (error) {
       handleAuthError(error);
     } finally {
@@ -62,23 +62,41 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const handleGetUser = async () => {
+  // const handleGetUser = async () => {
+  //   try {
+  //     const { data } = await axiosInstance.get(`/api/auth/${user.id}avatar`, {
+  //       headers: {
+  //         Authorization: ` Bearer ${token}`,
+  //       },
+  //     });
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //     toast.error("Please Log In", { id: "special" });
+  //   }
+  // };
+
+  const handleContactForm = async (formData) => {
+    setIsSubmitting(true);
+    console.log(formData);
     try {
-      const { data } = await axiosInstance.get("/auth", {
-        headers: {
-          Authorization: ` Bearer ${token}`,
-        },
-      });
-      console.log(data);
+      const { data } = await axiosInstance.post("/api/contact-us", formData);
+      toast.success("Message sent successfully");
     } catch (error) {
-      console.log(error);
-      toast.error("Please Log In", { id: "special" });
-      // localStorage.removeItem("token");
-      // navigate("/signin");
+      handleAuthError(error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
-  // console.log(user);
+  const handleLogOut = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userinfo");
+    setToken(null);
+    setUser(null);
+    navigate("/login");
+  };
+
   const contextData = {
     user,
     setUser,
@@ -88,7 +106,9 @@ export const AuthProvider = ({ children }) => {
     handleLogIn,
     isSubmitting,
     setIsSubmitting,
-    handleGetUser,
+    // handleGetUser,
+    handleContactForm,
+    handleLogOut,
   };
   return (
     <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>

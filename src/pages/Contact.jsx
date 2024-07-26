@@ -8,17 +8,29 @@ import HeroSectionContactUs from "../components/HeroSectionContactUs";
 import googleMap from "../assets/directionlogo.png";
 import Map from "../components/Map";
 import { useForm } from "react-hook-form";
+import useAuth from "../hooks/useAuth";
+import Spinner from "../utils/Spinner";
 
 const Contact = () => {
+  const {
+    isSubmitting,
+    setIsSubmitting,
+    handleContactForm,
+    setToken,
+    token,
+    setUser,
+  } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const submit = (data) => {
+    handleContactForm(data);
   };
+
+  const btnText = isSubmitting ? <Spinner /> : "Send Message";
 
   return (
     <div>
@@ -42,7 +54,9 @@ const Contact = () => {
                 Find us on Google Map
                 <img src={mapIcon} alt="" />
               </small>
-              <p className="">1 Ogunlesi Street, Off Awoyokun, Onipanu, Lagos.</p>
+              <p className="">
+                1 Ogunlesi Street, Off Awoyokun, Onipanu, Lagos.
+              </p>
             </div>
           </div>
           <hr />
@@ -68,22 +82,21 @@ const Contact = () => {
           <div className="generalContact">
             <form
               className="contactform"
-              onSubmit={handleSubmit(onSubmit)}
+              onSubmit={handleSubmit(submit)}
               action=""
             >
               <div>
                 <h4>Full Name</h4>
                 <input
-                  {...register("username", { required: true })}
+                  {...register("fullName", { required: true })}
                   className={`contactform1 ${
-                    errors.username ? "border-danger" : ""
+                    errors.fullName ? "border-danger" : ""
                   }`}
                   type="text"
                   placeholder="Your Name"
-                  name="username"
                 />
-                {errors?.username?.type === "required" ? (
-                  <small>This field is required!</small>
+                {errors?.fullName?.type === "required" ? (
+                  <small  class="text-red-700">This field is required!</small>
                 ) : null}
               </div>
               <div>
@@ -95,27 +108,23 @@ const Contact = () => {
                   }`}
                   type="email"
                   placeholder="Your Email"
-                  name="email"
                 />
                 {errors?.email?.type === "required" ? (
-                  <small className="text-warning">
-                    This field is required!
-                  </small>
+                  <small class="text-red-700">This field is required!</small>
                 ) : null}
               </div>
               <div>
                 <h4>Subject</h4>
                 <input
-                  {...register("title", { required: true })}
+                  {...register("subject", { required: true })}
                   className={`contactform1 ${
-                    errors.title ? "border-danger" : ""
+                    errors.subject ? "border-danger" : ""
                   }`}
                   type="text"
                   placeholder="Subject Title"
-                  name="title"
                 />
-                {errors?.title?.type === "required" ? (
-                  <small className="text-warning">
+                {errors?.subject?.type === "required" ? (
+                  <small class="text-red-700">
                     This field is required!
                   </small>
                 ) : null}
@@ -125,18 +134,16 @@ const Contact = () => {
                 <textarea
                   {...register("message", { required: true })}
                   className={`p ${errors.message ? "border-danger" : ""}`}
-                  name="message"
                   rows="5"
                   placeholder="Type your message here"
-                >
-                  {errors?.message?.type === "required" ? (
-                    <small className="text-warning">
-                      This field is required!
-                    </small>
-                  ) : null}
-                </textarea>
+                />
+                {errors?.message?.type === "required" && (
+                  <small  class="text-red-700">
+                    This field is required!
+                  </small>
+                )}
               </div>
-              <button>Send Message</button>
+              <button disabled={isSubmitting}>{btnText}</button>
             </form>
           </div>
         </div>
