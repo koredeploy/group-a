@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import SidebarInternal from "../components/sidebarInternal/SidebarInternal";
 import Header from "../components/header/Header";
 import { AuthProvider } from "../context/AuthContext";
+import Dashboard from "../components/Dashboard/Dashboard";
 // import RouteGuard from "../utils/RouteGuard";
 
 const LayoutInternal = () => {
@@ -13,6 +14,7 @@ const LayoutInternal = () => {
         <div className='bg-[#EDF5FA] w-full'>
             <Header />
             <div>{<Outlet/>}</div>
+            <Dashboard />
         </div>
       </div>
     </AuthProvider>

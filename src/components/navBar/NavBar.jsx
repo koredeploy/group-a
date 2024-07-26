@@ -49,7 +49,7 @@ const NavBar = () => {
             Categories
           </NavLink>
           <NavLink
-            to={token ? "/internal/dashboard" : "/login"}
+            to="/LayoutInternal"
             className={({ isActive }) =>
               isActive ? " active-link" : "noactivelink"
             }
@@ -88,10 +88,10 @@ const NavBar = () => {
             </p>
 
             {showDropDown ? (
-              <div className="bg-white flex dropsss flex-col absolute top-16 -left-10 mx-5 z-50 w-[12rem] rounded-lg">
+              <div className="bg-white flex dropsss flex-col absolute top-12 left-12 z-50">
                 <button onClick={handleLogOut}>Log Out</button>
                 <hr />
-                <Link to="/internal/dashboard">Go to Dashboard</Link>
+                <Link to="/LayoutInternal">Go to Dashboard</Link>
               </div>
             ) : null}
           </div>

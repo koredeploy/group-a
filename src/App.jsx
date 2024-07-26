@@ -16,6 +16,7 @@ import SignUp from "./pages/signUp/SignUp";
 import StudentVendor from "./pages/StudentVendor";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
+import RouteGuard from "./utils/RouteGuard";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Category from "./pages/internalpages/category/Category";
 import Restaurant from "./pages/internalpages/restaurant/Restaurant";
@@ -63,6 +64,15 @@ function App() {
         {
           path: "/faq",
           element: <Faq />,
+        },
+        {
+          element: <RouteGuard />,
+          children: [
+            {
+              path: "/LayoutInternal",
+              element: <LayoutInternal />,
+            },
+          ],
         },
         {
           path: "/signupvendor",

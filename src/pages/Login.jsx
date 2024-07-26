@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "../pages/Login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import deviconFacebook from "../assets/devicon_facebook.png";
 import deviconGoogle from "../assets/devicon_google.png";
+import "../pages/Login.css";
 import { FaCheckCircle, FaRegCircle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
@@ -12,27 +13,33 @@ import handleAuthError from "../utils/handleAuthError";
 import { LiaEyeSolid, LiaEyeSlashSolid } from "react-icons/lia";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const { isSubmitting, handleLogIn } = useAuth();
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    isSubmitting,
+    setIsSubmitting,
+    handleLogIn,
+    setToken,
+    token,
+    setUser,
+  } = useAuth();
 
-  const [userType, setUserType] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
+  const submit = (data) => {
+    handleLogIn(data);
+  };
   const handlePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  const submit = async (data) => {
-    try {
-      await handleLogIn(data);
-      navigate("/internal/dashboard");
-    } catch (error) {
-      handleAuthError(error);
-    }
-  };
+  const [userType, setUserType] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const btnText = isSubmitting ? <Spinner /> : "Log In";
+
 
   return (
     <div>
@@ -40,16 +47,30 @@ const Login = () => {
         <h1>Log In</h1>
         <div className="generalstudentform1">
           <div className="tick1">
-            <div onClick={() => setUserType("student")} className="tick">
+            <div
+              onClick={() => {
+                setUserType("student");
+              }}
+              className="tick"
+            >
               {userType === "student" ? <FaCheckCircle /> : <FaRegCircle />}
               <small>Log in as a student</small>
             </div>
-            <div onClick={() => setUserType("vendor")} className="tick">
+            <div
+              onClick={() => {
+                setUserType("vendor");
+              }}
+              className="tick"
+            >
               {userType === "vendor" ? <FaCheckCircle /> : <FaRegCircle />}
               <small>Log in as a vendor</small>
             </div>
           </div>
-          <form onSubmit={handleSubmit(submit)} className="studentform2" action="">
+          <form
+            onSubmit={handleSubmit(submit)}
+            className="studentform2"
+            action=""
+          >
             <div className="studentform3">
               <div>
                 <h4>Username</h4>
@@ -97,8 +118,8 @@ const Login = () => {
                   {btnText}
                 </button>
                 <small>
-                `Don&apos;t an account?{" "}`
-                  <Link className="text-orange-500" to="/signupstudent">
+                  Don't have an account?{" "}
+                  <Link class="text-orange-500" to={"/signupstudent"}>
                     Sign Up
                   </Link>
                 </small>

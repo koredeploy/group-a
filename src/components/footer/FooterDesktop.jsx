@@ -7,9 +7,17 @@ import instaLogo from "../../assets/insta logo.png";
 import twitterLogo from "../../assets/twitter logo.png";
 import copyrightLogo from "../../assets/copyrightlogo.png";
 import "../footer/FooterDesktop.css";
-import { Link, } from "react-router-dom";
+import { Link, useLocation, } from "react-router-dom";
 
 const FooterDesktop = () => {
+
+  const location = useLocation();
+  const routesWithoutFooter = ["/LayoutInternal"];
+  const isFooterVisible = !routesWithoutFooter.includes(location.pathname);
+
+  if (!isFooterVisible){
+    return null;
+  }
   return (
     <div className="maincontainer">
       <img className="LOGO" src={logo} alt="" />
