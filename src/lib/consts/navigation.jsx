@@ -52,12 +52,6 @@ export const Dashboard_Sidebar_Links =[
 
 export const Dashboard_Sidebar_Bottom_Links = [
     {
-        key: "logout",
-        label: "Logout",
-        path: "/internal/logout",
-        image: logout
-    },
-    {
         key: "settings",
         label: "Settings",
         path: "/internal/settings",
