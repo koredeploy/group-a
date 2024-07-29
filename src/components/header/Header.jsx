@@ -1,5 +1,4 @@
 import { CiSearch } from "react-icons/ci";
-// import { header } from "../../lib/consts/header";
 import cart from "../../assets/cart.svg";
 import cart2 from "../../assets/shopping.svg";
 import bell from "../../assets/bell.svg";
@@ -8,6 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import useAuth from "../../hooks/useAuth";
+
 
 const inputClass =
   "w-full outline-none px-8 bg-[#F7FAFC] border border-[#0000005a]  rounded-lg py-2";
@@ -18,7 +18,7 @@ const counter =
 
 const Header = () => {
   const [showDropDown, setShowDropdown] = useState(false);
-  const { token, user } = useAuth();
+  const { token, user } = useAuth() || {};
 
   const { pathname } = useLocation();
 

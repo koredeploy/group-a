@@ -32,6 +32,7 @@ const FeaturesPage = () => {
             <p className='md:text-[16px] text-[14px]'>Ordering for a crowd? Easily split and customize group orders for everyone.&quot;</p>
         </div>
       </div>
+      
     </section>
   )
 }
