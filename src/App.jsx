@@ -1,7 +1,7 @@
 import "./App.css";
 import HomeIndex from "./pages/Home/HomeIndex";
 import AboutIndex from "./pages/About/AboutIndex";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, Navigate } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
 import Contact from "./pages/Contact";
 import Error404 from "./pages/error404/Error404";
@@ -17,12 +17,18 @@ import StudentVendor from "./pages/StudentVendor";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Cart from "./components/Cart/Cart";
+import CartPage from "./pages/internalpages/cartpage/CartPage";
 import Category from "./pages/internalpages/category/Category";
 import Restaurant from "./pages/internalpages/restaurant/Restaurant";
 import Notification from "./pages/internalpages/notification/Notification";
-import CartPage from "./pages/internalpages/cartpage/CartPage";
 import Order from "./pages/internalpages/order/Order";
+import Settings from "./pages/internalpages/settings/Settings";
+import Notifications from "./pages/internalpages/settings/notification/Notification";
+import PrivacyPolicyInternal from "./pages/internalpages/settings/privacypolicy/PrivacyPolicy";
+import Terms from "./pages/internalpages/settings/terms/Terms";
+import Feedback from "./pages/internalpages/settings/feedback/Feedback";
+import Support from "./pages/internalpages/settings/support/Support";
+import SettingsLayout from "./layout/settingslayout";
 
 function App() {
   const router = createBrowserRouter([
@@ -113,6 +119,35 @@ function App() {
         {
           path: "/internal/order",
           element: <Order />,
+        },
+        {
+          path: "/internal/settings",
+          element: <Navigate to="/notification" replace />,
+        },
+      ],
+    },
+    {
+      element: <SettingsLayout />,
+      children: [
+        {
+          path: "/notification",
+          element: <Notifications />,
+        },
+        {
+          path: "/privacypol",
+          element: <PrivacyPolicyInternal />,
+        },
+        {
+          path: "/terms",
+          element: <Terms />,
+        },
+        {
+          path: "/feedback",
+          element: <Feedback />,
+        },
+        {
+          path: "/support",
+          element: <Support />,
         },
       ],
     },
