@@ -2,7 +2,11 @@ import React from "react";
 import "../components/HeroSectionCategories.css";
 import { IoMdSearch } from "react-icons/io";
 
-const HeroSectionCategories = () => {
+const HeroSectionCategories = ({ handleSearch, isLoading }) => {
+  const handleInputChange = (e) => {
+    handleSearch(e.target.value);
+  };
+
   return (
     <div>
       <div className="heroCategory">
@@ -14,6 +18,8 @@ const HeroSectionCategories = () => {
             className="inputCategory"
             type="text"
             placeholder="Search for food..."
+            onChange={handleInputChange}
+            disabled={isLoading}
           />
         </div>
       </div>

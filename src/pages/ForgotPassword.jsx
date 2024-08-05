@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../pages/ForgotPassword.css";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axiosInstance from "../utils/axiosInstance";
 import Spinner from "../utils/Spinner";
@@ -14,18 +14,20 @@ const ForgotPassword = () => {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate();
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmitForm = async (data) => {
     setIsSubmitting(true);
     console.log(data);
     try {
-      const { response } = await axiosInstance.post(
+      const response = await axiosInstance.post(
         "/api/auth/forgot-password",
         data
       );
       console.log(response);
-      // navigate to the page
+      navigate("/password-reset");
     } catch (error) {
       console.log(error?.response);
       toast.error(error?.response?.data?.message || "Something went wrong");
@@ -34,7 +36,7 @@ const ForgotPassword = () => {
     }
   };
 
-  const btnText = isSubmitting ? <Spinner /> : "Reset Password";
+  const btnText = isSubmitting ? <Spinner /> : "Email me";
 
   return (
     <div>

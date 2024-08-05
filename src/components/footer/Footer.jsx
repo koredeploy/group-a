@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
   
   const Footer = () => {
     const [dropdrown, setDropDown] = useState(false);
+    const [dropdrown1, setDropDown1] = useState(false);
     const location = useLocation();
     const routesWithoutFooter = ['/navbarInternal'];
     const isFooterVisible = !routesWithoutFooter.includes(location.pathname);
@@ -29,13 +30,13 @@ import { Link } from "react-router-dom";
           <h4>CONTACT</h4>
           <IoIosArrowDown
             onClick={() => {
-              setDropDown(!dropdrown);
+              setDropDown1(!dropdrown1);
             }}
             className="drop"
           />
         </div>
         <div>
-          {dropdrown && (
+          {dropdrown1 && (
             <div className="contact">
               <div className="contact-info">
                 <img src={emailLogo} alt="" />

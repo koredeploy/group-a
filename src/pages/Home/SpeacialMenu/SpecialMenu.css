@@ -1,11 +1,11 @@
-.categoryproducts {
+.categoryproducts1 {
   display: flex;
   gap: 1.5em;
   overflow-x: auto;
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  
+  /* justify-content: space-between; */
 }
 
 .innerproducts {
@@ -20,13 +20,12 @@
 }
 .specialmenu {
   padding: 2em;
-  
 }
 .specialmenuinner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2em;
+  margin-top: 2em;
   gap: 0.5em;
 }
 
@@ -68,4 +67,26 @@
 }
 .firstproduct {
   background-color: whitesmoke;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  font-size: 4rem; 
+  animation: spin 1s linear infinite;
+  color: var(--orange);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

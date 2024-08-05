@@ -4,8 +4,6 @@ import React, { useContext, useState } from "react";
 import logo from "../../assets/logo tedible.png";
 import "../navBar/NavBar.css";
 import SideBar from "../sideBar/SideBar";
-import logoMobile from "../../assets/Logo mobile.png";
-import AuthContext from "../../context/AuthContext";
 import useAuth from "../../hooks/useAuth";
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -27,8 +25,8 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="main-container">
-        <Link to="/">
-          <img className="NavLogo1" src={logoMobile} alt="" />
+        <Link to="/" className="NavLogo1">
+          <img src={logo} alt="Logo" />
         </Link>
         <Link to="/" className="NavLogo">
           <img src={logo} alt="Logo" />
@@ -78,11 +76,16 @@ const NavBar = () => {
         </div>
         {token ? (
           <div className="flex gap-2 dropss items-center relative">
-            <div className="flex gap-2 items-center">
-              <img className=" rounded-full size-7" src={user?.avatar} alt="User Avatar" />
-              <p>{user?.username}</p>
+            <div className="flex gap-2 useravatar items-center">
+              <img
+                className=" rounded-full size-7"
+                src={user?.avatar}
+                alt="User Avatar"
+              />
+              <p className="txt-color">{user?.username}</p>
             </div>
             <p
+              className="nodropdown"
               onClick={() => {
                 setShowDropdown(!showDropDown);
               }}

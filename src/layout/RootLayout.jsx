@@ -5,16 +5,19 @@ import { Outlet } from "react-router-dom";
 import FooterDesktop from "../components/footer/FooterDesktop";
 import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "../context/AuthContext";
+import { CartProvider } from "../context/CartContext";
 
 const RootLayout = () => {
   return (
     <div>
       <Toaster />
       <AuthProvider>
-        <NavBar />
-        <Outlet />
-        <Footer />
-        <FooterDesktop />
+        <CartProvider>
+          <NavBar />
+          <Outlet />
+          <Footer />
+          <FooterDesktop />
+        </CartProvider>
       </AuthProvider>
     </div>
   );

@@ -4,34 +4,43 @@
   padding: 1rem 2rem;
   position: sticky;
   align-items: center;
-  background-color: var(--green);
+  background-color: var(--white);
 }
 
 .NavLogo {
   width: 30%;
   display: none;
 }
-
+.NavLogo1{
+  width: 25%;
+}
 .links {
   gap: 2rem;
   display: none;
 }
-
+.txt-color {
+  color: var(--green);
+  display: none;
+}
 .noactivelink {
   color: var(--green);
 }
-
+.nodropdown {
+  display: none;
+}
 .active-link {
   color: var(--orange);
 }
 .navbar {
   position: relative;
-  z-index:5 ;
-  
+  z-index: 5;
 }
 .buttons {
   display: none;
   gap: 8%;
+}
+.useravatar{
+  margin-left: 10em;
 }
 .btn1,
 .btn2 {
@@ -49,12 +58,12 @@
   border: 0em;
 }
 
-.dropsss{
+.dropsss {
   color: black;
   padding: 1.5em;
   align-items: start;
 }
-.dropss{
+.dropss {
   display: flex;
   align-items: center;
 }
@@ -75,10 +84,21 @@
     width: 20%;
     display: flex;
   }
-  .NavLogo1{
+  .NavLogo1 {
     display: none;
   }
-  .btn3, .btn4{
+  .btn3,
+  .btn4 {
     display: none;
+  }
+  .nodropdown {
+    display: flex;
+  }
+  .useravatar{
+    margin-left: 0;
+  }
+  .txt-color {
+    color: var(--green);
+    display: flex;
   }
 }

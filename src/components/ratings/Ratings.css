@@ -1,0 +1,22 @@
+.ratings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rating-stars {
+  display: flex;
+  cursor: pointer;
+  gap: 0.4em;
+  margin-right: 4em;
+}
+
+.star {
+  font-size: 1.5em;
+  color: gray;
+  /* margin: 0 5px; */
+}
+
+.star.filled {
+  color: var(--orange);
+}

@@ -7,9 +7,7 @@ import "../pages/Login.css";
 import { FaCheckCircle, FaRegCircle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
-import toast from "react-hot-toast";
 import Spinner from "../utils/Spinner";
-import handleAuthError from "../utils/handleAuthError";
 import { LiaEyeSolid, LiaEyeSlashSolid } from "react-icons/lia";
 
 const Login = () => {

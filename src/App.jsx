@@ -17,6 +17,8 @@ import StudentVendor from "./pages/StudentVendor";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import RouteGuard from "./utils/RouteGuard";
+import ResetPassword from "./pages/ResetPassword";
+import SetNewPassword from "./pages/SetNewPassword";
 
 function App() {
   const router = createBrowserRouter([
@@ -83,6 +85,14 @@ function App() {
         {
           path: "/forgotpassword",
           element: <ForgotPassword />,
+        },
+        {
+          path: "/password-reset",
+          element: <ResetPassword />,
+        },
+        {
+          path: "/reset-password/:token",
+          element: <SetNewPassword />,
         },
         {
           path: "/faq",

@@ -8,10 +8,14 @@ import foodImg4 from "../../assets/category food4.png";
 import foodImg5 from "../../assets/category food5.png";
 import InfoPage from "../Home/InfoPage/InfoPage";
 import axiosInstance from "../../utils/axiosInstance";
+import Ratings from "../../components/ratings/Ratings";
+import { FaSpinner } from "react-icons/fa";
 
 const Categories = () => {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [showMore, setShowMore] = useState(false);
   const [showMore1, setShowMore1] = useState(false);
   const [showMore2, setShowMore2] = useState(false);
@@ -21,15 +25,31 @@ const Categories = () => {
     const fetchData = async () => {
       try {
         const response = await axiosInstance.get("/api/product");
-        const product = await response.data;
-        console.log(product);
-        setProducts(product);
+        const products = await response.data;
+        console.log("Fetched products:", products); // Debugging line
+        setProducts(products);
+        setFilteredProducts(products); // Initialize filtered products
+        setLoading(false);
       } catch (error) {
-        setError("ooops Something went wrong please refresh.");
+        setError("Oops! Something went wrong, please refresh.");
+        setLoading(false);
       }
     };
     fetchData();
   }, []);
+
+  const handleSearch = (searchItem) => {
+    if (searchItem === "") {
+      setFilteredProducts(products);
+    } else {
+      const filtered = products.filter((product) =>
+        product.itemName
+          .toLowerCase()
+          .startsWith(searchItem.toLowerCase().trim())
+      );
+      setFilteredProducts(filtered);
+    }
+  };
 
   const handleSeeMore = () => {
     setShowMore((prevShowMore) => !prevShowMore);
@@ -44,14 +64,22 @@ const Categories = () => {
     setShowMore3((prevShowMore) => !prevShowMore);
   };
 
-  const displayedProducts = showMore ? products : products.slice(0, 4);
-  const displayedProducts1 = showMore1 ? products : products.slice(0, 4);
-  const displayedProducts2 = showMore2 ? products : products.slice(0, 4);
-  const displayedProducts3 = showMore3 ? products : products.slice(0, 4);
+  const displayedProducts = showMore
+    ? filteredProducts
+    : filteredProducts.slice(0, 4);
+  const displayedProducts1 = showMore1
+    ? filteredProducts
+    : filteredProducts.slice(0, 4);
+  const displayedProducts2 = showMore2
+    ? filteredProducts
+    : filteredProducts.slice(0, 4);
+  const displayedProducts3 = showMore3
+    ? filteredProducts
+    : filteredProducts.slice(0, 4);
 
   return (
     <div>
-      <HeroSectionCategories />
+      <HeroSectionCategories handleSearch={handleSearch} isLoading={loading} />
       <div className="category-food">
         <h2>Category</h2>
         <div className="foodImg">
@@ -78,35 +106,25 @@ const Categories = () => {
         </div>
         <div>
           <h2 className="categorywings">Chicken Wings</h2>
-          <div className="categoryproducts">
-            {/* First Displayed Product */}
-            {displayedProducts.map((product) => (
-              <div key={product.id}>
-                <div className="firstproduct bg-red-500">
-                  <img
-                    className="productsimg"
-                    src={product.itemImage}
-                    alt={product.itemName}
-                  />
-                  <div className="innerproducts1 ">
-                    <small>Ratings</small>
-                    <p>{product.itemName}</p>
-                    <small>Mcdonalds</small>
-                    <div className="productprice">
-                      <p className="cartprice">{product.price}</p>
-                      <p className="plussign">+</p>
-                    </div>
-                  </div>
-                </div>
-                {showMore && (
-                  <div className="secondproduct">
+          {loading ? (
+            <div className="spinner-container">
+              <FaSpinner className="spinner" />
+            </div>
+          ) : filteredProducts.length === 0 ? (
+            <p className="no-product-found">No Product Found</p>
+          ) : (
+            <div className="categoryproducts">
+              {/* First Displayed Product */}
+              {displayedProducts.map((product) => (
+                <div key={product._id}>
+                  <div className="firstproduct">
                     <img
                       className="productsimg"
                       src={product.itemImage}
                       alt={product.itemName}
                     />
                     <div className="innerproducts1">
-                      <small>Ratings</small>
+                      <Ratings productId={product._id} />
                       <p>{product.itemName}</p>
                       <small>Mcdonalds</small>
                       <div className="productprice">
@@ -115,46 +133,54 @@ const Categories = () => {
                       </div>
                     </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
+                  {showMore && (
+                    <div className="secondproduct">
+                      <img
+                        className="productsimg"
+                        src={product.itemImage}
+                        alt={product.itemName}
+                      />
+                      <div className="innerproducts1">
+                        <Ratings productId={product._id} />
+                        <p>{product.itemName}</p>
+                        <small>Mcdonalds</small>
+                        <div className="productprice">
+                          <p className="cartprice">{product.price}</p>
+                          <p className="plussign">+</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <p onClick={handleSeeMore} className="seemorecart">
           {showMore ? "Show Less" : "See More"}
         </p>
-        {/* ends here */}
-        {/* Second Displayed Product starts */}
+        {/* Additional sections for other product categories */}
+        {/* Second Displayed Product */}
         <div>
-          <h2 className="categorywings">Grilled Chicken Caeser Salad </h2>
-          <div className="categoryproducts">
-            {displayedProducts1.map((product) => (
-              <div key={product.id}>
-                <div className="firstproduct">
-                  <img
-                    className="productsimg"
-                    src={product.itemImage}
-                    alt={product.itemName}
-                  />
-                  <div className="innerproducts1">
-                    <small>Ratings</small>
-                    <p>{product.itemName}</p>
-                    <small>Mcdonalds</small>
-                    <div className="productprice">
-                      <p className="cartprice">{product.price}</p>
-                      <p className="plussign">+</p>
-                    </div>
-                  </div>
-                </div>
-                {showMore1 && (
-                  <div className="secondproduct">
+          <h2 className="categorywings">Grilled Chicken Caesar Salad</h2>
+          {loading ? (
+            <div className="spinner-container">
+              <FaSpinner className="spinner" />
+            </div>
+          ) : filteredProducts.length === 0 ? (
+            <p className="no-product-found">No Product Found</p>
+          ) : (
+            <div className="categoryproducts">
+              {displayedProducts1.map((product) => (
+                <div key={product._id}>
+                  <div className="firstproduct">
                     <img
                       className="productsimg"
                       src={product.itemImage}
                       alt={product.itemName}
                     />
                     <div className="innerproducts1">
-                      <small>Ratings</small>
+                      <Ratings productId={product._id} />
                       <p>{product.itemName}</p>
                       <small>Mcdonalds</small>
                       <div className="productprice">
@@ -163,47 +189,53 @@ const Categories = () => {
                       </div>
                     </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
+                  {showMore1 && (
+                    <div className="secondproduct">
+                      <img
+                        className="productsimg"
+                        src={product.itemImage}
+                        alt={product.itemName}
+                      />
+                      <div className="innerproducts1">
+                        <Ratings productId={product._id} />
+                        <p>{product.itemName}</p>
+                        <small>Mcdonalds</small>
+                        <div className="productprice">
+                          <p className="cartprice">{product.price}</p>
+                          <p className="plussign">+</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <p onClick={handleSeeMore1} className="seemorecart">
           {showMore1 ? "Show Less" : "See More"}
         </p>
-        {/* ends here */}
-        {/* Third Displayed Product starts */}
-
+        {/* Third Displayed Product */}
         <div>
           <h2 className="categorywings">Chicken Noodles Soup</h2>
-          <div className="categoryproducts">
-            {displayedProducts2.map((product) => (
-              <div key={product.id}>
-                <div className="firstproduct">
-                  <img
-                    className="productsimg"
-                    src={product.itemImage}
-                    alt={product.itemName}
-                  />
-                  <div className="innerproducts1">
-                    <small>Ratings</small>
-                    <p>{product.itemName}</p>
-                    <small>Mcdonalds</small>
-                    <div className="productprice">
-                      <p className="cartprice">{product.price}</p>
-                      <p className="plussign">+</p>
-                    </div>
-                  </div>
-                </div>
-                {showMore2 && (
-                  <div className="secondproduct">
+          {loading ? (
+            <div className="spinner-container">
+              <FaSpinner className="spinner" />
+            </div>
+          ) : filteredProducts.length === 0 ? (
+            <p className="no-product-found">No Product Found</p>
+          ) : (
+            <div className="categoryproducts">
+              {displayedProducts2.map((product) => (
+                <div key={product._id}>
+                  <div className="firstproduct">
                     <img
                       className="productsimg"
                       src={product.itemImage}
                       alt={product.itemName}
                     />
                     <div className="innerproducts1">
-                      <small>Ratings</small>
+                      <Ratings productId={product._id} />
                       <p>{product.itemName}</p>
                       <small>Mcdonalds</small>
                       <div className="productprice">
@@ -212,47 +244,53 @@ const Categories = () => {
                       </div>
                     </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
+                  {showMore2 && (
+                    <div className="secondproduct">
+                      <img
+                        className="productsimg"
+                        src={product.itemImage}
+                        alt={product.itemName}
+                      />
+                      <div className="innerproducts1">
+                        <Ratings productId={product._id} />
+                        <p>{product.itemName}</p>
+                        <small>Mcdonalds</small>
+                        <div className="productprice">
+                          <p className="cartprice">{product.price}</p>
+                          <p className="plussign">+</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <p onClick={handleSeeMore2} className="seemorecart">
           {showMore2 ? "Show Less" : "See More"}
         </p>
-        {/* ends here */}
-        {/* Fourth Displayed Product starts */}
-
+        {/* Fourth Displayed Product */}
         <div>
           <h2 className="categorywings">Grilled Chicken Breast</h2>
-          <div className="categoryproducts">
-            {displayedProducts3.map((product) => (
-              <div key={product.id}>
-                <div className="firstproduct">
-                  <img
-                    className="productsimg"
-                    src={product.itemImage}
-                    alt={product.itemName}
-                  />
-                  <div className="innerproducts1">
-                    <small>Ratings</small>
-                    <p>{product.itemName}</p>
-                    <small>Mcdonalds</small>
-                    <div className="productprice">
-                      <p className="cartprice">{product.price}</p>
-                      <p className="plussign">+</p>
-                    </div>
-                  </div>
-                </div>
-                {showMore3 && (
-                  <div className="secondproduct">
+          {loading ? (
+            <div className="spinner-container">
+              <FaSpinner className="spinner" />
+            </div>
+          ) : filteredProducts.length === 0 ? (
+            <p className="no-product-found">No Product Found</p>
+          ) : (
+            <div className="categoryproducts">
+              {displayedProducts3.map((product) => (
+                <div key={product._id}>
+                  <div className="firstproduct">
                     <img
                       className="productsimg"
                       src={product.itemImage}
                       alt={product.itemName}
                     />
                     <div className="innerproducts1">
-                      <small>Ratings</small>
+                      <Ratings productId={product._id} />
                       <p>{product.itemName}</p>
                       <small>Mcdonalds</small>
                       <div className="productprice">
@@ -261,10 +299,28 @@ const Categories = () => {
                       </div>
                     </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
+                  {showMore3 && (
+                    <div className="secondproduct">
+                      <img
+                        className="productsimg"
+                        src={product.itemImage}
+                        alt={product.itemName}
+                      />
+                      <div className="innerproducts1">
+                        <Ratings productId={product._id} />
+                        <p>{product.itemName}</p>
+                        <small>Mcdonalds</small>
+                        <div className="productprice">
+                          <p className="cartprice">{product.price}</p>
+                          <p className="plussign">+</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <p onClick={handleSeeMore3} className="seemorecart">
           {showMore3 ? "Show Less" : "See More"}
