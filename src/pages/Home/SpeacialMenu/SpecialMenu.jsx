@@ -12,7 +12,6 @@ const SpecialMenu = () => {
       try {
         const response = await axiosInstance.get("/api/product");
         const product = await response.data;
-        console.log(product);
         setProducts(product);
       } catch (error) {
         setError("ooops Something went wrong please refresh.");
@@ -30,10 +29,10 @@ const SpecialMenu = () => {
     <div>
       <div className="specialmenu">
         <div className="specialmenuinner">
-          <h1>Special Menu</h1>
-          <small>
+          <h1 className="text-[50px] font-medium">Special Menu</h1>
+          <small className="text-lg text-center">
             Discover our specially curated menu, designed to delight your taste
-            buds with unique and seasonal dishes
+            buds <br /> with unique and seasonal dishes
           </small>
         </div>
         <div className="categoryproducts">

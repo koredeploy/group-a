@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import fried from "../../../assets/fried.svg";
 import chick from "../../../assets/chick.svg";
 import burger from "../../../assets/burg.svg";
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
   return (
@@ -152,9 +153,9 @@ const CartPage = () => {
               #20,500
             </span>
           </h2>
-          <button className="border py-2 w-full rounded-md bg-[#FF7834] border-[#FF7834] text-white mt-5 text-lg">
+          <Link to={'/internal/checkout'} className="border py-2 w-full rounded-md bg-[#FF7834] text-center border-[#FF7834] text-white mt-5 text-lg">
             Checkout
-          </button>
+          </Link>
         </div>
       </div>
     </section>

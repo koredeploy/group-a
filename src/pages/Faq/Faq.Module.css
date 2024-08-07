@@ -1,6 +1,7 @@
 .faqBg{
     background-image: url(../../assets/faq.png);
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    background-position: center;
 }

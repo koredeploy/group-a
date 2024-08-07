@@ -6,24 +6,33 @@ import chopsHover from "../../assets/hoveredchops.png";
 import friedImage from "../../assets/fried_rice.png";
 import chopsImage from "../../assets/small_chops.png";
 import styles from "./Hero.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const [hoveredItem, setHoveredItem] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState(defaultImage);
+  const [currentHover, setCurrentHover] = useState(null);
 
-  const handleMouseEnter = (item) => {
-    setHoveredItem(item);
+  useEffect(() => {
+    if (currentHover) {
+      setHoveredItem(currentHover);
+    } else {
+      setHoveredItem(defaultImage);
+    }
+  }, [currentHover]);
+
+  const handleMouseEnter = (hoveredImage) => {
+    setCurrentHover(hoveredImage);
   };
 
   const handleMouseLeave = () => {
-    setHoveredItem(null);
+    setCurrentHover(null);
   };
 
   return (
     <div className="w-full bg-[#073126] text-white md:flex md:flex-row flex flex-col-reverse justify-center items-center md:px-[7rem] py-[2rem] px-[2rem] gap-[1rem]">
       <div className="flex flex-col md:grid gap-[1rem] justify-center items-center leading-[2rem] w-full">
-        <h1 className="md:text-[60px]  text-[48px] font-bold">MEAL TIME</h1>
+        <h1 className="md:text-[60px] text-[48px] font-bold">MEAL TIME</h1>
         <h2 className="md:text-[35px] text-[20px] font-semibold md:font-extralight">
           FUEL YOUR STUDY
         </h2>
@@ -32,7 +41,7 @@ const Hero = () => {
           and <br /> energized.
         </p>
         <Link to="LayoutInternal">
-          <button className="border rounded-lg md:mt-0 mt-[1rem]  px-[2.5rem] py-1 text-[18.7px] bg-[#FF7834] border-[#FF7834]">
+          <button className="border rounded-lg md:mt-0 mt-[1rem] px-[2.5rem] py-1 text-[18.7px] bg-[#FF7834] border-[#FF7834]">
             View Menu
           </button>
         </Link>
@@ -40,9 +49,9 @@ const Hero = () => {
 
       <div className="w-full border bg-white rounded-full px-[1rem] py-[1rem] my-[3rem] grid justify-center">
         <img
-          src={hoveredItem || defaultImage}
+          src={hoveredItem}
           alt="Default"
-          className={`w-[100rem] ${hoveredItem ? styles.hoveredImage : ""}`}
+          className={`w-full transition-opacity duration-300 ease-in-out ${styles.hoveredImage}`}
         />
       </div>
 
@@ -57,7 +66,7 @@ const Hero = () => {
               <img src={egusiImage} alt="Egusi" className="w-[5rem]" />
             </div>
             <div className="">
-              <h1 className={`text-black`}>Eba & Egusi</h1>
+              <h1 className="text-black">Eba & Egusi</h1>
               <p className="text-[13px] text-black">Sweet Sensation</p>
               <span className="text-[#FF7834]">N1500</span>
             </div>
@@ -70,7 +79,7 @@ const Hero = () => {
             onMouseLeave={handleMouseLeave}
           >
             <div className="">
-              <h1 className={`text-black`}>Fried Rice & Egg</h1>
+              <h1 className="text-black">Fried Rice & Egg</h1>
               <p className="text-[13px] text-black">Chicken Republic</p>
               <span className="text-[#FF7834]">N3000</span>
             </div>
@@ -81,7 +90,7 @@ const Hero = () => {
         </div>
         <div className="text-black relative">
           <div
-            className="justify-center items-center flex border hover:border-[#FF7834] rounded-full bg-white px-[.2rem] pr-[5.5rem] py-[.2rem] "
+            className="justify-center items-center flex border hover:border-[#FF7834] rounded-full bg-white px-[.2rem] pr-[5.5rem] py-[.2rem]"
             onMouseEnter={() => handleMouseEnter(chopsHover)}
             onMouseLeave={handleMouseLeave}
           >
@@ -89,8 +98,8 @@ const Hero = () => {
               <img src={chopsImage} alt="Small Chops" className="w-[5rem]" />
             </div>
             <div className="">
-              <h1 className={`text-black`}>Small Chops</h1>
-              <p className="text-[13px] text-black ">The Place</p>
+              <h1 className="text-black">Small Chops</h1>
+              <p className="text-[13px] text-black">The Place</p>
               <span className="text-[#FF7834]">N4000</span>
             </div>
           </div>

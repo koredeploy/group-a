@@ -38,17 +38,16 @@ const Header = () => {
   useEffect(() => {
     // Add or remove the no-scroll class based on the sidebar state
     if (sidebar) {
-      document.body.classList.add('no-scroll');
+      document.body.classList.add("no-scroll");
     } else {
-      document.body.classList.remove('no-scroll');
+      document.body.classList.remove("no-scroll");
     }
     // Cleanup on component unmount
     return () => {
-      document.body.classList.remove('no-scroll');
+      document.body.classList.remove("no-scroll");
     };
   }, [sidebar]);
 
-  
   const ToggleSidebar = () => {
     setSidebar(!sidebar);
   };
@@ -67,7 +66,10 @@ const Header = () => {
           </div>
           {sidebar && (
             <div>
-              <div className="w-full bg-[#0000005f] absolute h-screen z-10 top-0 left-0" onClick={ToggleSidebar}/>
+              <div
+                className="w-full bg-[#0000005f] absolute h-screen z-10 top-0 left-0"
+                onClick={ToggleSidebar}
+              />
               <div className="fade-in flex flex-col gap-5 top-0 left-0 text-white absolute bg-[#073126] z-20 w-60 h-screen px-5 pt-20">
                 {Dashboard_Sidebar_Links.map((item) => (
                   <SideBarLink key={item.key} item={item} />
@@ -204,12 +206,14 @@ const Header = () => {
         <div className="flex gap-5 rounded-full">
           {token && (
             <div className="flex gap-4 dropss relative">
-              <img
-                src={user?.avatar}
-                alt="avatar"
-                className="size-10 rounded-full"
-              />
-              <p>{user?.username}</p>
+              <Link to={'/internal/profile'} className="flex items-center gap-2">
+                <img
+                  src={user?.avatar}
+                  alt="avatar"
+                  className="size-10 rounded-full"
+                />
+                <p>{user?.username}</p>
+              </Link>
               <p
                 onClick={() => {
                   setShowDropdown(!showDropDown);
