@@ -11,7 +11,7 @@ const orderImg = 'border bg-[#ff78347c] border-[#ff78347c] rounded-full py-2 px-
 
 const Cart = () => {
   return (
-    <div className=' border bg-white h-[49rem] z-1 mx-[rem] ml-[rem] my-[5.5rem] text-black'>
+    <div className=' border bg-white h-[49rem] z-1 mx-[rem] ml-[rem] my-[5.5rem] text-black sm:block hidden'>
         <div className='px-5 py-4 flex flex-col gap-5  justify-center'>
             <h1 className='font-semibold text-[14px]'>My Cart Preview</h1>
             <div className='flex flex-col items-center justify-center gap-5'>

@@ -10,7 +10,7 @@ const LayoutInternal = () => {
     <AuthProvider>
     <div className='flex flex-row bg-[#EDF5FA] h-full w-full'>
         <SidebarInternal/>
-        <div className='bg-[#EDF5FA] w-full'>
+        <div className='sm:bg-[#EDF5FA] bg-white w-full'>
             <Header />
             <div>{<Outlet/>}</div>
         </div>
