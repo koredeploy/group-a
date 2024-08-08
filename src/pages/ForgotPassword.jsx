@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../pages/ForgotPassword.css";
 import { FaArrowLeft } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,7 +17,7 @@ const ForgotPassword = () => {
   const navigate = useNavigate();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  
   const handleSubmitForm = async (data) => {
     setIsSubmitting(true);
     console.log(data);

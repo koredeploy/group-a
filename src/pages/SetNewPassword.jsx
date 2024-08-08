@@ -1,7 +1,11 @@
 import React from "react";
 import "../pages/SetNewPassword.css";
+import { useParams } from "react-router-dom";
 
 const SetNewPassword = () => {
+  const { token } = useParams();
+  console.log(token);
+  
   return (
     <>
       <div className="setnewpass">
@@ -13,7 +17,7 @@ const SetNewPassword = () => {
         <form action="">
           <div className="newpass">
             <small>New Password</small>
-            <input  type="text" />
+            <input type="text" />
           </div>
           <div className="confirmpass">
             <small>Confirm Password</small>

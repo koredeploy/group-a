@@ -1,43 +1,77 @@
 import { CiSearch } from "react-icons/ci";
-import { IoIosArrowDown } from "react-icons/io";
 import cart from "../../assets/cart.svg";
+import cart2 from "../../assets/shopping.svg";
 import bell from "../../assets/bell.svg";
-import photo from "../../assets/photo.svg";
-import arrow from "../../assets/arrow.svg";
+import bell2 from "../../assets/bell_white.svg";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { IoIosArrowDown } from "react-icons/io";
 import useAuth from "../../hooks/useAuth";
 
+
 const inputClass =
-  "w-[62rem] outline-none px-8 bg-[#F7FAFC] border border-[#0000005a]  rounded-lg py-2";
+  "w-full outline-none px-8 bg-[#F7FAFC] border border-[#0000005a]  rounded-lg py-2";
 const iconClass =
-  "w-10 rounded-full border py-2 px-2 bg-[#E6ECEB] hover:bg-[#FF7834] hover:no-underline active:bg-[#FF7834]";
+  "w-10 rounded-full py-2.5 px-2.5 active:bg-[#FF7834] hover:no-underline flex flex-col items-center";
 const counter =
-  "absolute -top-3 rounded-full -right-1 border text-[10px] px-2 bg-[#BD3826] border-[#BD3826] text-white py-1";
+  "absolute -top-5 rounded-full -left-3 mr-4 border text-[10px] sm:px-2 px-1.5 py-[2px] bg-[#BD3826] border-[#BD3826] text-white sm:py-1";
 
 const Header = () => {
   const [showDropDown, setShowDropdown] = useState(false);
-  const { token, user} = useAuth();
+  const { token, user } = useAuth() || {};
 
+  const { pathname } = useLocation();
 
   return (
-    <div className="border-b-[1px] w-screen p-[1.2rem] text-black bg-white pb-[1rem]">
-      <div className="w-full flex gap-10 items-center">
-        <h1 className="font-semibold">Welcome Back</h1>
+    <div className="border-b-[1px] flex w-full p-[1.5rem] text-black bg-white pb-[1rem] fixed z-10">
+      <div className="flex gap-10 items-center w-full pl-[18rem] px-[5rem]">
+        <h1 className="font-semibold ">Welcome Back</h1>
 
-        <div className="relative flex items-center w-[66rem]">
+        <div className="relative flex items-center ">
           <CiSearch className="absolute px-2" fontSize={35} />
           <input type="text" placeholder="Search" className={inputClass} />
         </div>
+      </div>
+      <div className="flex gap-5">
+        <div className="flex flex-col items-end justify-end w-1/3">
+          <div className="flex items-center justify-end gap-5 py-1 rounded-full">
+            <Link
+              to={"/internal/cart"}
+              className={`${
+                location.pathname === "/internal/cart"
+                  ? "border-[#FF7834] bg-[#FF7834]"
+                  : "border bg-[#E6ECEB] w-10"
+              } ${iconClass}`}
+            >
+              <img src={pathname === "/internal/cart" ? cart2 : cart} alt="" />
+            </Link>
+            <Link
+              to={"/internal/notification"}
+              className={`${
+                location.pathname === "/internal/notification"
+                  ? "border-[#FF7834] bg-[#FF7834]"
+                  : "border bg-[#E6ECEB] w-10"
+              } ${iconClass}`}
+            >
+              <div className="relative">
+                <img
+                  src={pathname === "/internal/notification" ? bell2 : bell}
+                  alt=""
+                />
+                <span className={counter}>0</span>
+              </div>
+            </Link>
+          </div>
+        </div>
 
         <div className="flex gap-5 rounded-full">
-          <img src={cart} alt="" className={iconClass} />
-          <div className="relative">
-            <img src={bell} alt="" className={iconClass} />
-            <span className={counter}>0</span>
-          </div>
           {token && (
             <div className="flex gap-4 dropss relative">
+              <img
+                src={user?.avatar}
+                alt="avatar"
+                className="size-10 rounded-full"
+              />
               <p>{user?.username}</p>
               <p
                 onClick={() => {

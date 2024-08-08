@@ -1,15 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../SpeacialMenu/SpecialMenu.css";
 import axiosInstance from "../../../utils/axiosInstance";
-import CartContext from "../../../context/CartContext";
 import Ratings from "../../../components/ratings/Ratings";
 import { FaSpinner } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import CartContext from "../../../context/CartContext";
+import useCartStore from "../../../store/CartStore";
 
 const SpecialMenu = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showMore, setShowMore] = useState(false);
+
+  const navigate = useNavigate();
+
+  const addToCart = useCartStore((state) => state.addToCart);
+  console.log(addToCart);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -64,9 +71,7 @@ const SpecialMenu = () => {
                       <p className="cartprice">{product.price}</p>
                       <p
                         className="plussign"
-                        onClick={() => {
-                          addToCart(product);
-                        }}
+                        onClick={() => addToCart(product, navigate)}
                       >
                         +
                       </p>

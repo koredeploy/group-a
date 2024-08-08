@@ -21,7 +21,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-full bg-[#073126] text-white md:flex md:flex-row flex flex-col-reverse justify-center items-center md:px-[7rem] px-[2rem] gap-[1rem]">
+    <div className="w-full bg-[#073126] text-white md:flex md:flex-row flex flex-col-reverse justify-center items-center md:px-[7rem] py-[2rem] px-[2rem] gap-[1rem]">
       <div className="flex flex-col md:grid gap-[1rem] justify-center items-center leading-[2rem] w-full">
         <h1 className="md:text-[60px]  text-[48px] font-bold">MEAL TIME</h1>
         <h2 className="md:text-[35px] text-[20px] font-semibold md:font-extralight">

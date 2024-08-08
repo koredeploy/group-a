@@ -1,0 +1,138 @@
+.category-food {
+  display: flex;
+  flex-direction: column;
+  padding: 3em;
+  gap: 0.8em;
+}
+
+.foodImg {
+  display: flex;
+  gap: 1.5em;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.foodImg img {
+  scroll-snap-align: center;
+}
+
+.foodImg p {
+  display: flex;
+  justify-content: center;
+  padding: 0.8em;
+  transition: 0.3s ease, color 0.3s ease;
+}
+
+.foodImg div:hover {
+  background-color: var(--orange);
+  color: white;
+}
+
+.foodImg div {
+  border-radius: 1.5em;
+  border-top: 0;
+}
+.categorywings {
+  background-color: var(--green);
+  color: var(--white);
+  margin-bottom: 1em;
+  border-radius: 0.3em;
+  padding: 0.3em 2em;
+}
+
+.categoryproducts {
+  display: flex;
+  gap: 1.5em;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.innerproducts1 {
+  display: flex;
+  flex-direction: column;
+  /* background-color: whitesmoke; */
+  padding: 1em;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  margin-top: -1.5em;
+  padding-top: 2.5em;
+}
+
+.productsimg {
+  border-radius: 2em 2em 0 0;
+  height: 35vh;
+  object-fit: cover;
+  width: 100%;
+  border-bottom-left-radius: 10em;
+  border-bottom-right-radius: 10em;
+}
+.productprice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.plussign {
+  background-color: var(--orange);
+  border-radius: 100%;
+  padding: 0.5em 0.8em;
+  color: white;
+}
+.cartprice {
+  color: var(--orange);
+  font-weight: bold;
+}
+.seemorecart {
+  display: flex;
+  justify-content: end;
+  color: var(--orange);
+  cursor: pointer;
+}
+.secondproduct {
+  margin-top: 2em;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  font-size: 4rem;
+  animation: spin 1s linear infinite;
+  color: var(--orange);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .foodImg {
+    overflow-x: auto;
+    gap: 1em;
+  }
+  .foodImg div {
+    flex: 0 0 40%;
+  }
+  .foodImg img {
+    width: 100%;
+  }
+}
+
+.firstproduct,
+.firstproduct1 {
+  background-color: whitesmoke;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+}

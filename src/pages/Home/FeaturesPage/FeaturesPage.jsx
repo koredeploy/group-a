@@ -1,7 +1,6 @@
 import meal from '../../../assets/meal.png'
 import time from '../../../assets/time.png'
 import group from '../../../assets/group.png'
-import React from 'react'
 
 const FeaturesPage = () => {
   return (
@@ -16,23 +15,24 @@ const FeaturesPage = () => {
                 <img src={meal} alt="" className='w-[4rem]'/>
             </div>
             <h1 className='font-medium md:text-[23.59px] text-[16px]'>Customizable Meal Plan</h1>
-            <p className='md:text-[16px] text-[14px]'>"Personalize your meals to suit your taste . Match items to create your perfect dish."</p>
+            <p className='md:text-[16px] text-[14px]'>Personalize your meals to suit your taste . Match items to create your perfect dish.&quot;</p>
         </div>
         <div className='flex flex-col items-center gap-[1rem] text-center'>
             <div>
                 <img src={time} alt="" className='w-[4rem]'/>
             </div>
             <h1 className='font-medium md:text-[23.59px] text-[16px]'>Real-Time Order Tracking</h1>
-            <p className='md:text-[16px] text-[14px]'>"Track your order item from kitchen to doorstep. Know exactly when your meal will arrive."</p>
+            <p className='md:text-[16px] text-[14px]'>Track your order item from kitchen to doorstep. Know exactly when your meal will arrive.&quot;</p>
         </div>
         <div className='flex flex-col items-center  gap-[1rem] text-center'>
             <div>
                 <img src={group} alt="" className='w-[4rem]'/>
             </div>
             <h1 className='font-medium md:text-[23.59px] text-[16px]'>Group Order</h1>
-            <p className='md:text-[16px] text-[14px]'>"Ordering for a crowd? Easily split and customize group orders for everyone."</p>
+            <p className='md:text-[16px] text-[14px]'>Ordering for a crowd? Easily split and customize group orders for everyone.&quot;</p>
         </div>
       </div>
+      
     </section>
   )
 }

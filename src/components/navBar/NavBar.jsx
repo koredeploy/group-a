@@ -1,6 +1,6 @@
 // import { Link, NavLink, useLocation } from "react-router-dom";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import React, { useContext, useState } from "react";
+import { Link, NavLink, useLocation} from "react-router-dom";
+import  { useState } from "react";
 import logo from "../../assets/logo tedible.png";
 import "../navBar/NavBar.css";
 import SideBar from "../sideBar/SideBar";
@@ -9,17 +9,15 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const NavBar = () => {
   const location = useLocation();
-  const routesWithoutNavbar = ["/layoutInternal", "/LayoutInternal"];
+  const routesWithoutNavbar = ["/LayoutInternal"];
   const isNavbarVisible = !routesWithoutNavbar.includes(location.pathname);
-
   const [showDropDown, setShowDropdown] = useState(false);
 
-  const { token, user, handleLogOut, handleGetUser } = useAuth();
-
-  if (!isNavbarVisible) {
-    return null;
-  }
+  const { token, user, handleLogOut, } = useAuth();
   console.log(user);
+  if(!isNavbarVisible){
+    return null
+  }
 
   // const { user } = useContext(AuthContext);
   return (

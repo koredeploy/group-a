@@ -5,7 +5,6 @@
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  /* justify-content: space-between; */
 }
 
 .innerproducts {

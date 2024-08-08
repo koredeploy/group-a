@@ -106,7 +106,6 @@ export const AuthProvider = ({ children }) => {
     handleLogIn,
     isSubmitting,
     setIsSubmitting,
-    // handleGetUser,
     handleContactForm,
     handleLogOut,
   };
