@@ -10,11 +10,11 @@ const SettingsLayout = () => {
       <SidebarInternal />
       <div className="flex flex-col w-full">
         <Header />
-        <div className="flex flex-row">
-          <div className="fixed">
+        <div className="flex sm:flex-row flex-col sm:bg-transparent bg-white">
+          <div className="sm:fixed">
           <Settings />
           </div>
-          <div className="bg-[#EDF5FA] w-full">
+          <div className="sm:bg-[#EDF5FA] bg-white w-full">
             <Outlet />
           </div>
         </div>

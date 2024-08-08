@@ -90,7 +90,12 @@ const SpecialMenu = () => {
                     <small>Mcdonalds</small>
                     <div className="productprice">
                       <p className="cartprice">{product.price}</p>
-                      <p className="plussign">+</p>
+                      <p
+                        className="plussign"
+                        onClick={() => addToCart(product, navigate)}
+                      >
+                        +
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -107,7 +112,12 @@ const SpecialMenu = () => {
                       <small>Mcdonalds</small>
                       <div className="productprice">
                         <p className="cartprice">{product.price}</p>
-                        <p className="plussign">+</p>
+                        <p
+                          className="plussign"
+                          onClick={() => addToCart(product, navigate)}
+                        >
+                          +
+                        </p>
                       </div>
                     </div>
                   </div>

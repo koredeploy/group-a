@@ -5,7 +5,7 @@ import location from '../../../../assets/location.svg'
 const Support = () => {
   return (
     <div className="flex ">
-      <div className="text-black pl-[33.3rem] w-full py-[11.75rem] z-">
+      <div className="text-black sm:pl-[33.3rem] w-full sm:py-[11.75rem] py-[2rem] sm:px-0 px-4">
         <div className="border bg-white text-black rounded-md px-[1.2rem] h-[35rem] w-full">
           <h1 className="py-[2rem] text-[28.5px] font-semibold text-[#0c513f]">
             Contact Support

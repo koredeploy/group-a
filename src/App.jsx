@@ -37,6 +37,9 @@ import Feedback from "./pages/internalpages/settings/feedback/Feedback";
 import Support from "./pages/internalpages/settings/support/Support";
 import SettingsLayout from "./layout/settingslayout";
 import { CartProvider } from "./context/CartContext";
+import Profile from "./pages/internalpages/profile/Profile";
+import Checkout from "./pages/internalpages/checkout/Checkout";
+import Favourite from "./pages/internalpages/favourite/Favourite";
 
 function App() {
   const router = createBrowserRouter([
@@ -145,6 +148,18 @@ function App() {
         {
           path: "/internal/order",
           element: <Order />,
+        },
+        {
+          path: "/internal/profile",
+          element: <Profile />,
+        },
+        {
+          path: "/internal/checkout",
+          element: <Checkout />,
+        },
+        {
+          path: "/internal/favourite",
+          element: <Favourite />,
         },
         {
           path: "/internal/settings",

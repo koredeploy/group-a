@@ -3,7 +3,7 @@ import Cart from "../../../../components/Cart/Cart";
 const Feedback = () => {
   return (
     <div className="flex w-full">
-      <div className="text-black pl-[33.3rem] w-full py-[11.7rem]">
+      <div className="text-black sm:pl-[33.3rem] w-full sm:py-[11.7rem] py-[2rem] sm:px-0 px-4">
         <div className="border bg-white text-black rounded-md px-[1.2rem] h-[35rem] w-full mr-">
           <h1 className="py-[2rem] text-[28.5px] font-semibold text-[#0c513f]">
             Feedback

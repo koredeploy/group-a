@@ -5,7 +5,7 @@ import Cart from "../../../../components/Cart/Cart";
 const Notifications = () => {
   return (
     <div className="flex">
-      <div className="text-black pl-[33.3rem] w-full py-[11.75rem]">
+      <div className="text-black sm:pl-[33.3rem] sm:px-0 px-3 py-4 w-full sm:py-[11.75rem]">
         <div className="border bg-white text-black rounded-md px-[1.2rem] h-[40rem] w-full">
           <h1 className="py-[3rem] text-[28.5px] font-semibold text-[#0C513F]">
             Notification

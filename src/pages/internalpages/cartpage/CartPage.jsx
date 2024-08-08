@@ -2,19 +2,20 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import fried from "../../../assets/fried.svg";
 import chick from "../../../assets/chick.svg";
 import burger from "../../../assets/burg.svg";
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
   return (
-    <section className="flex">
-      <div className="pl-[18rem] px-[2rem] w-full py-[7rem]">
+    <section className="sm:flex text-black sm:px-0 px-5">
+      <div className="sm:pl-[18rem] sm:px-[2rem] w-full sm:py-[7rem] py-[2rem] pt-[9rem]">
         <h1 className="text-[28.5px] border-b w-full border-[#80808080] font-semibold text-[#0C513F] py-[1rem]">
           My Cart
         </h1>
+
+        {/* Cart Item 1 */}
         <div className="flex justify-between border-b border-[#80808080] py-10">
           <div className="flex gap-5">
-            <div>
-              <img src={chick} alt="fried rice" />
-            </div>
+            <img src={chick} alt="fried rice" className="" />
             <div className="flex flex-col items-start gap-4">
               <h1 className="text-lg font-semibold">
                 Fried Rice & Chicken{" "}
@@ -47,15 +48,14 @@ const CartPage = () => {
             icon="mdi:remove"
             style={{ color: "white" }}
             fontSize={30}
-            className="border border-[#FF7834] bg-[#FF7834] rounded-md mx-10"
+            className="border border-[#FF7834] bg-[#FF7834] rounded-md sm:w-8 sm:h-7 w-10 h-5 mx-10"
           />
         </div>
 
+        {/* Cart Item 2 */}
         <div className="flex justify-between border-b border-[#80808080] py-5">
           <div className="flex gap-5">
-            <div>
-              <img src={fried} alt="pizza" />
-            </div>
+            <img src={fried} alt="pizza" />
             <div className="flex flex-col items-start gap-4">
               <h1 className="text-lg font-semibold">
                 Fried Rice & Chicken{" "}
@@ -88,15 +88,14 @@ const CartPage = () => {
             icon="mdi:remove"
             style={{ color: "white" }}
             fontSize={30}
-            className="border border-[#FF7834] bg-[#FF7834] rounded-md mx-10"
+            className="border border-[#FF7834] bg-[#FF7834] sm:w-8 sm:h-7 w-10 h-5 rounded-md mx-10"
           />
         </div>
 
+        {/* Cart Item 3 */}
         <div className="flex justify-between border-b border-[#80808080] py-5">
           <div className="flex gap-5">
-            <div>
-              <img src={burger} alt="burger" />
-            </div>
+            <img src={burger} alt="burger" />
             <div className="flex flex-col items-start gap-4">
               <h1 className="text-lg font-semibold">
                 Fried Rice & Chicken{" "}
@@ -129,12 +128,12 @@ const CartPage = () => {
             icon="mdi:remove"
             style={{ color: "white" }}
             fontSize={30}
-            className="border border-[#FF7834] bg-[#FF7834] rounded-md mx-10"
+            className="border border-[#FF7834] bg-[#FF7834] rounded-md sm:w-8 sm:h-7 w-10 h-5 mx-10"
           />
         </div>
       </div>
 
-      <div className="border w-[22rem] h-[20rem] bg-white z-1 mx-[rem] ml-[rem] my-[5.5rem] text-black">
+      <div className="border sm:w-[22rem] w-full h-[20rem] bg-white z-1 sm:px-0 px-5 ml-[rem] my-[5.5rem] text-black">
         <h1 className="py-5 px-5 text-lg">SUMMARY</h1>
         <div className="border-t mx-5 flex flex-col gap-3 ">
           <h2 className="flex justify-between mt-5 text-[13.35px] items-center">
@@ -151,9 +150,12 @@ const CartPage = () => {
               N20,500
             </span>
           </h2>
-          <button className="border py-2 w-full rounded-md bg-[#FF7834] border-[#FF7834] text-white mt-5 text-lg">
+          <Link
+            to="/internal/checkout"
+            className="border py-2 w-full rounded-md bg-[#FF7834] text-center border-[#FF7834] text-white mt-5 text-lg"
+          >
             Checkout
-          </button>
+          </Link>
         </div>
       </div>
     </section>

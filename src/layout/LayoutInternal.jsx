@@ -8,11 +8,11 @@ import { CartProvider } from "../context/CartContext";
 const LayoutInternal = () => {
   return (
     <AuthProvider>
-      <div className="flex flex-row bg-[#EDF5FA] h-full w-full">
-        <SidebarInternal />
-        <div className="bg-[#EDF5FA] w-full">
-          <Header />
-          <div>{<Outlet />}</div>
+    <div className='flex flex-row bg-[#EDF5FA] h-full w-full'>
+        <SidebarInternal/>
+        <div className='sm:bg-[#EDF5FA] bg-white w-full'>
+            <Header />
+            <div>{<Outlet/>}</div>
         </div>
       </div>
     </AuthProvider>

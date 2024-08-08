@@ -4,8 +4,8 @@ import Cart from "../../../../components/Cart/Cart";
 const PrivacyPolicyInternal = () => {
   return (
     <div className="flex">
-      <div className="text-black pl-[33.3rem] w-full py-[11.75rem]">
-        <div className="border bg-white text-black rounded-md px-[1.2rem] h-[40rem] w-full">
+      <div className="text-black sm:pl-[33.3rem] w-full sm:py-[11.75rem] py-[2rem] sm:px-0 px-5">
+        <div className="border bg-white text-black rounded-md px-[1.2rem] sm:h-[40rem] h-full w-full">
           <h1 className="py-[2rem] text-[28.5px] font-semibold text-[#0C513F]">
             Privacy Policy
           </h1>
