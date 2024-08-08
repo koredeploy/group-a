@@ -1,0 +1,5 @@
+.hoveredImage {
+    transition: transform 1s ease;
+    transform: scale(1.05);
+    padding-top: 1rem;
+  }

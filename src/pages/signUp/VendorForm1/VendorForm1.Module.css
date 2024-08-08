@@ -1,0 +1,6 @@
+.vendorHero{
+    background-image: url(../../../assets/bg_vendor.png);
+    width: 100%;
+    background-size: cover;
+    background-repeat: none;
+}

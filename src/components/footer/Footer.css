@@ -1,0 +1,112 @@
+.maincontainermobile {
+  background-color: var(--green);
+  color: white;
+  padding: 2.5rem;
+}
+.contactmobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+}
+.contactmobile hr {
+  border: 0;
+  border-top: 0.1em solid grey;
+}
+.contactmobile a {
+  color: var(--white);
+  font-size: 90%;
+}
+.LOGOmobile {
+  width: 30%;
+  margin-bottom: 3em;
+}
+
+.newslettermobile {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.newslettermobile p {
+  margin-top: 1.5em;
+}
+.newslettermobile input {
+  border-radius: 0.5rem;
+  padding: 0.8em 1em;
+  border: 0rem;
+  background-color: var(--white);
+}
+.copyrightmobile {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+.socialmediamobile {
+  display: flex;
+  gap: 1em;
+}
+
+.generalmedia {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+.hr1 {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.drop{
+  font-size: x-large;
+}
+.top{
+  scroll-behavior: smooth;
+}
+
+.input-group {
+  border: 1px solid white;
+  background-color: white;
+  padding: 0.2rem;
+  display: flex;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.input-group input {
+  border: 0px;
+  width: 100%;
+  flex: 2;
+  background-color: #d7d7d7;
+  border-radius: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.input-group button {
+  flex: 1;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border: 0;
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.maincontainer {
+  display: none;
+}
+.contactdropdown,
+.quicklinksdropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (width > 768px) {
+  .maincontainermobile {
+    display: none;
+  }
+
+  .maincontainer {
+    display: block;
+  }
+}
